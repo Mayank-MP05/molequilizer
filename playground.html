@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/checkbox.css" />
+    <link rel="stylesheet" href="./css/playground.css" />
+  </head>
+  <body>
+    <div class="row p-0 m-0">
+      <div class="col-md-6 bg-info">
+        <div id="rmol" class="col"></div>
+      </div>
+      <div class="col-md-6 bg-info"><div id="pmol" class="col"></div></div>
+    </div>
+
+    <div class="row p-0 m-0 sticky-bottom">
+      <div
+        class="col-12 m-1 d-flex flex-row justify-content-center align-items-center"
+      >
+        <input id="cr1" type="number" class="coeff" min="1" max="5" value="1" />
+        <h4 id="r1">ip1</h4>
+        <h4 id="r2plus">+</h4>
+
+        <input id="cr2" type="number" class="coeff" min="1" max="5" value="1" />
+        <h4 id="r2">ip2</h4>
+        <img src="./img/learn/right-arrow.png" width="50" alt="" />
+
+        <input id="cp1" type="number" class="coeff" min="1" max="5" value="1" />
+        <h4 id="p1">op1</h4>
+        <h4 id="p2plus">+</h4>
+
+        <input id="cp2" type="number" class="coeff" min="1" max="5" value="1" />
+        <h4 id="p2">op2<sub>4</sub></h4>
+      </div>
+      <div
+        class="col-12 m-1 d-flex flex-row justify-content-center align-items-center"
+      >
+        <div>
+          <button
+            class="btn lgx-btn"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Check the Balance
+          </button>
+          <button
+            class="btn lgx-btn bg-info p-0"
+            data-toggle="modal"
+            data-target="#exampleModal2"
+          >
+            <img src="./img/learn/idea.png" width="55" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Chemical Reaction Results
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" style="border: 3px solid greenyellow">
+            <div class="alert alert-success" role="alert" colspan="4">
+              Reaction is Balanced
+            </div>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Element</th>
+                  <th scope="col">LHS Count</th>
+                  <th scope="col">RHS Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Fe</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Cl</td>
+                  <td>6</td>
+                  <td>6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 here -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <img src="img/learn/idea.png" width="40" />Chemical Reaction
+              Balancing Hints
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="font-weight-bold">The Law of Conservation of Mass</p>
+            <p>
+              The Law of Conservation of Mass dates from Antoine Lavoisier's
+              1789 discovery that mass is neither created nor destroyed in
+              chemical reactions. In other words, the mass of any one element at
+              the beginning of a reaction will equal the mass of that element at
+              the end of the reaction. If we account for all reactants and
+              products in a chemical reaction, the total mass will be the same
+              at any point in time in any closed system.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"
+      integrity="sha512-ilnmzGTqmx3gXTbd1eLUf6LTgAFEULf1d1Pf18LR3o+IQjt1j+rtlOHX1upJUSdWlganBwNe0E7U4U5iWH+uYw=="
+      crossorigin="anonymous"
+    ></script>
+    <link href="./node_modules/d3-molecule/dist/css/Molecule.css" />
+    <script src="./node_modules/d3-molecule/dist/js/Molecule.js"></script>
+    <script src="./js/playground-single-molecule-show.js"></script>
+    <script type="module" src="./js/reaction-one.js"></script>
+    <script src="./js/calculate-balance.js"></script>
+  </body>
+</html>
