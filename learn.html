@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn balancing the Chemical Reaction | Team Molequilizer</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/moliquilizer-logo-favicon.ico"
+    />
     <link rel="stylesheet" href="./css/comman.css" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
+    <link rel="stylesheet" href="./css/modal-form.css" />
+    <link rel="stylesheet" href="./css/progress-bar.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
       <img src="./img/moliquilizer-logo.png" alt="" class="nav-icon" />
-      <a class="navbar-brand mx-2" href="#">Molequilizer</a>
+      <a class="navbar-brand mx-2" href="/">Molequilizer</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -26,72 +33,168 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item font-weight-bold">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="./learn.html"
               >learn <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item font-weight-bold">
-            <a class="nav-link" href="#">Play</a>
+            <a class="nav-link" href="./playground.html">Play</a>
           </li>
           <button
             type="button"
+            id="Join-In-Trigger-Button"
             class="btn btn-outline-info mx-1 font-weight-bold"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
           >
-            Log In
+            Join In
           </button>
-          <button
-            type="button"
-            class="btn btn-outline-info mx-1 font-weight-bold"
-          >
-            Sign Up
-          </button>
+          <div class="dropdown" id="logged-In-Dropdown-Trigger-Btn">
+            <button
+              class="btn p-0 dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img src="./img/users/user (1).png" class="avatar-img" />
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownMenu2"
+            >
+              <button class="dropdown-item" type="button">My Account</button>
+              <button
+                class="dropdown-item"
+                type="button"
+                id="logout-trigger-btn"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </ul>
       </div>
     </nav>
-    <div class="container" id="learner-parent" style="margin-top: 10px">
-      <div class="accordion" id="accordionExample">
-        <div
-          class="card m-0"
-          data-toggle="collapse"
-          data-target="#collapseOne"
-          aria-expanded="true"
-          aria-controls="collapseOne"
-        >
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link" type="button">
-                Collapsible Group Item #1
-              </button>
-              <label class="customcheck"
-                >One
-                <input type="checkbox" checked="checked" />
-                <span class="checkmark"></span>
-              </label>
-            </h5>
-          </div>
 
-          <div
-            id="collapseOne"
-            class="collapse show"
-            aria-labelledby="headingOne"
-            data-parent="#accordionExample"
-          >
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-              on it squid single-origin coffee nulla assumenda shoreditch et.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-              lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them
-              accusamus labore sustainable VHS.
+    <div class="container">
+      <div class="card my-3">
+        <div class="row p-2">
+          <div class="m-auto col-md-7">
+            <h5>Current Lesson :</h5>
+            <h5>Next Lesson :</h5>
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="ml-auto col-md-4">
+            <div class="progress-bar-circular blue">
+              <span class="progress-bar-circular-left">
+                <span class="progress-bar-circular-bar"></span>
+              </span>
+              <span class="progress-bar-circular-right">
+                <span class="progress-bar-circular-bar"></span>
+              </span>
+              <div class="progress-bar-circular-value">90%</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="container" id="learner-parent" style="margin-top: 10px">
+      <div class="accordion" id="accordionExample"></div>
+    </div>
+
+    <!-- Login Modal Start here -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <div
+                class="alert alert-danger"
+                id="errorAlert"
+                role="alert"
+              ></div>
+              <div
+                class="alert alert-success"
+                role="alert"
+                id="AccountCreationAlert"
+              >
+                Account Creation Successful!
+              </div>
+              <div class="alert alert-success" role="alert" id="LoginAlert">
+                Logging you in...
+              </div>
+              <h5 class="card-title text-center">Join In</h5>
+
+              <div class="form-signin">
+                <div class="form-label-group">
+                  <input
+                    type="email"
+                    id="inputEmail"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                    autofocus
+                  />
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input
+                    type="password"
+                    id="inputPassword"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <button
+                  id="sign-in-button"
+                  class="btn btn-lg btn-primary btn-block text-uppercase"
+                  type="submit"
+                >
+                  Sign in
+                </button>
+                <hr class="my-4" />
+                <button
+                  class="btn btn-lg btn-google btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-google mr-2"></i> Sign in with Google
+                </button>
+                <button
+                  class="btn btn-lg btn-facebook btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal end here -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -107,6 +210,23 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDIrny-a431INfeRL9BSDXRKTYZXX7K7Yc",
+        authDomain: "essentials-6bca6.firebaseapp.com",
+        projectId: "essentials-6bca6",
+        storageBucket: "essentials-6bca6.appspot.com",
+        messagingSenderId: "1080942207592",
+        appId: "1:1080942207592:web:db881eeb9c30ea7637d1dd",
+        measurementId: "G-6CQCWE9J58",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./js/firebase-controllers.js"></script>
+    <script src="./js/firebase/auth.js"></script>
     <script src="./js/learn-renderer.js"></script>
   </body>
 </html>
