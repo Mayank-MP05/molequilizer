@@ -57,13 +57,18 @@
           <div class="dropdown" id="logged-In-Dropdown-Trigger-Btn">
             <button
               class="btn p-0 dropdown-toggle"
+              style="background: #f8f9fa"
               type="button"
               id="dropdownMenu2"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <img src="./img/users/user (1).png" class="avatar-img" />
+              <img
+                id="UserImg"
+                src="./img/users/user (1).png"
+                class="avatar-img"
+              />
             </button>
             <div
               class="dropdown-menu dropdown-menu-right"
@@ -87,7 +92,8 @@
       <div class="row p-2">
         <div class="col-md-4 d-flex flex-column">
           <img
-            src="./img/users/user (2).png"
+            src="./img/users/user (1).png"
+            id="AvatarImg"
             alt="Profile Picture of the User"
             class="w-50 m-auto"
           />
@@ -95,19 +101,19 @@
             <label>Selct the Profile Pic</label>
             <select
               class="form-control"
-              value="{user.profilePic}"
+              value="4"
               name="profilePic"
-              onChange="{handleChange}"
+              id="dpUpdater"
             >
-              <option value="1">Girl X</option>
-              <option value="2">Girl Y</option>
-              <option value="3">Girl Z</option>
-              <option value="4">Boy D</option>
-              <option value="5">Girl V</option>
-              <option value="6">Boy E</option>
-              <option value="7">Boy F</option>
-              <option value="8">Boy J</option>
-              <option value="9">Boy K</option>
+              <option value="0">Girl X</option>
+              <option value="1">Girl Y</option>
+              <option value="2">Girl Z</option>
+              <option value="3">Boy D</option>
+              <option value="4">Girl V</option>
+              <option value="5">Boy E</option>
+              <option value="6">Boy F</option>
+              <option value="7">Boy J</option>
+              <option value="8">Boy K</option>
             </select>
           </div>
         </div>
@@ -118,6 +124,7 @@
             <div class="col-sm-10">
               <input
                 type="email"
+                id="emailInput"
                 disabled
                 class="form-control-plaintext"
                 value="{user.email}"
@@ -129,6 +136,7 @@
             <div class="col-sm-10">
               <input
                 type="text"
+                id="nameInput"
                 class="form-control"
                 value="{user.fullName}"
                 name="fullName"
@@ -140,8 +148,8 @@
         </div>
       </div>
       <div class="row text-center justify-content-center">
-        <button class="btn btn-danger m-1" onClick="{resetForm}">Reset</button>
-        <button class="btn btn-success m-1" onClick="{updateData}">
+        <button class="btn btn-danger m-1" id="ResetBtn">Reset</button>
+        <button class="btn btn-success m-1" id="SaveChangesBtn">
           Save Changes
         </button>
       </div>
@@ -256,6 +264,6 @@
     <script src="./js/firebase/init.js"></script>
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
-    <script src="./js/learn-renderer.js"></script>
+    <script src="./js/account/account-ui-updator.js"></script>
   </body>
 </html>
