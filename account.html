@@ -3,12 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playground</title>
-    <link href="./node_modules/d3-molecule/dist/css/Molecule.css" />
-    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <title>Learn balancing the Chemical Reaction | Team Molequilizer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/social-media-icons.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/moliquilizer-logo-favicon.ico"
+    />
     <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
-    <link rel="stylesheet" href="./css/playground.css" />
+    <link rel="stylesheet" href="./css/modal-form.css" />
+    <link rel="stylesheet" href="./css/progress-bar.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -59,9 +69,7 @@
               class="dropdown-menu dropdown-menu-right"
               aria-labelledby="dropdownMenu2"
             >
-              <a class="dropdown-item" type="button" href="./account.html"
-                >My Account</a
-              >
+              <button class="dropdown-item" type="button">My Account</button>
               <button
                 class="dropdown-item"
                 type="button"
@@ -75,166 +83,78 @@
       </div>
     </nav>
 
-    <div class="row p-0 m-0">
-      <div class="col-md-6 bg-info">
-        <div id="rmol" class="col"></div>
-      </div>
-      <div class="col-md-6 bg-info"><div id="pmol" class="col"></div></div>
-    </div>
-
-    <div class="p-0 m-0 sticky-bottom">
-      <div
-        class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
-      >
-        <input id="cr1" type="number" class="coeff" min="1" max="5" value="1" />
-        <h4 id="r1">ip1</h4>
-        <h4 id="r2plus">+</h4>
-
-        <input id="cr2" type="number" class="coeff" min="1" max="5" value="1" />
-        <h4 id="r2">ip2</h4>
-        <img src="./img/learn/right-arrow.png" width="50" alt="" />
-
-        <input id="cp1" type="number" class="coeff" min="1" max="5" value="1" />
-        <h4 id="p1">op1</h4>
-        <h4 id="p2plus">+</h4>
-
-        <input id="cp2" type="number" class="coeff" min="1" max="5" value="1" />
-        <h4 id="p2">op2<sub>4</sub></h4>
-      </div>
-      <div
-        class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
-      >
-        <div>
-          <button
-            class="btn lgx-btn"
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            Check the Balance
-          </button>
-          <button
-            class="btn lgx-btn bg-info p-0"
-            data-toggle="modal"
-            data-target="#exampleModal2"
-          >
-            <img src="./img/learn/idea.png" width="55" />
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Chemical Reaction Balancer modal starts here -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Chemical Reaction Results
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <div class="container">
+      <div class="row p-2">
+        <div class="col-md-4 d-flex flex-column">
+          <img
+            src="./img/users/user (2).png"
+            alt="Profile Picture of the User"
+            class="w-50 m-auto"
+          />
+          <div class="form-group">
+            <label>Selct the Profile Pic</label>
+            <select
+              class="form-control"
+              value="{user.profilePic}"
+              name="profilePic"
+              onChange="{handleChange}"
+            >
+              <option value="1">Girl X</option>
+              <option value="2">Girl Y</option>
+              <option value="3">Girl Z</option>
+              <option value="4">Boy D</option>
+              <option value="5">Girl V</option>
+              <option value="6">Boy E</option>
+              <option value="7">Boy F</option>
+              <option value="8">Boy J</option>
+              <option value="9">Boy K</option>
+            </select>
           </div>
-          <div class="modal-body" style="border: 3px solid greenyellow">
-            <div class="alert alert-success" role="alert" colspan="4">
-              Reaction is Balanced
+        </div>
+
+        <div class="col-md-7">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input
+                type="email"
+                disabled
+                class="form-control-plaintext"
+                value="{user.email}"
+              />
             </div>
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Element</th>
-                  <th scope="col">LHS Count</th>
-                  <th scope="col">RHS Count</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Fe</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Cl</td>
-                  <td>6</td>
-                  <td>6</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                value="{user.fullName}"
+                name="fullName"
+                onChange="{handleChange}"
+                placeholder="John Doe"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Chemical Reaction Balancer modal Ends here -->
-
-    <!-- Modal 2 - Hint Modal start here -->
-    <div
-      class="modal fade"
-      id="exampleModal2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              <img src="img/learn/idea.png" width="40" />Chemical Reaction
-              Balancing Hints
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p class="font-weight-bold">The Law of Conservation of Mass</p>
-            <p>
-              The Law of Conservation of Mass dates from Antoine Lavoisier's
-              1789 discovery that mass is neither created nor destroyed in
-              chemical reactions. In other words, the mass of any one element at
-              the beginning of a reaction will equal the mass of that element at
-              the end of the reaction. If we account for all reactants and
-              products in a chemical reaction, the total mass will be the same
-              at any point in time in any closed system.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+      <div class="row text-center justify-content-center">
+        <button class="btn btn-danger m-1" onClick="{resetForm}">Reset</button>
+        <button class="btn btn-success m-1" onClick="{updateData}">
+          Save Changes
+        </button>
+      </div>
+      <hr class="my-3" />
+      <h3>Share your progress with Friends</h3>
+      <div class="row">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-snapchat-ghost"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-instagram"></a>
       </div>
     </div>
-    <!-- Hint modal ends here -->
 
     <!-- Login Modal Start here -->
     <div
@@ -332,19 +252,10 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"
-      integrity="sha512-ilnmzGTqmx3gXTbd1eLUf6LTgAFEULf1d1Pf18LR3o+IQjt1j+rtlOHX1upJUSdWlganBwNe0E7U4U5iWH+uYw=="
-      crossorigin="anonymous"
-    ></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-
-    <script src="./node_modules/d3-molecule/dist/js/Molecule.js"></script>
-    <script src="./js/playground-single-molecule-show.js"></script>
-    <script type="module" src="./js/reaction-one.js"></script>
     <script src="./js/firebase/init.js"></script>
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
-    <script src="./js/calculate-balance.js"></script>
+    <script src="./js/learn-renderer.js"></script>
   </body>
 </html>

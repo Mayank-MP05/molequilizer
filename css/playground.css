@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .row.sticky-bottom {
   position: fixed;
   left: 0;
@@ -13,8 +16,7 @@
 /* Green Button */
 .lgx-btn,
 .lgx-submit,
-.wpcf7-submit,
-button {
+.wpcf7-submit {
   overflow: hidden;
   border: none;
   text-align: center;
@@ -41,8 +43,7 @@ button {
 
 .lgx-btn:hover,
 .lgx-submit:hover,
-.wpcf7-submit:hover,
-button:hover {
+.wpcf7-submit:hover {
   color: #fff;
   border-radius: 16px;
   -moz-transition-duration: 0.3s;
@@ -51,3 +52,9 @@ button:hover {
   transition-duration: 0.3s;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* .bottom-card {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px;
+} */

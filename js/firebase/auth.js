@@ -2,6 +2,13 @@ const joinInBtn = document.getElementById("sign-in-button");
 $("#errorAlert").hide();
 $("#LoginAlert").hide();
 $("#AccountCreationAlert").hide();
+var errorMessage2;
+
+$("#exampleModalCenter").on("show.bs.modal", function (e) {
+  $("#errorAlert").hide();
+  $("#LoginAlert").hide();
+  $("#AccountCreationAlert").hide();
+});
 
 joinInBtn.addEventListener("click", () => {
   $("#errorAlert").hide();
@@ -25,7 +32,7 @@ joinInBtn.addEventListener("click", () => {
     })
     .catch((error) => {
       var errorCode = error.code;
-      var errorMessage = error.message;
+      errorMessage2 = error.message;
       // ..
       // console.log(errorCode, errorMessage);
       if (errorCode === "auth/email-already-in-use") {
@@ -48,7 +55,8 @@ joinInBtn.addEventListener("click", () => {
             $("#errorAlert").html(errorMessage).show();
             return;
           });
-        $("#errorAlert").html(errorMessage).show();
+      } else {
+        $("#errorAlert").html(errorMessage2).show();
       }
     });
 });
