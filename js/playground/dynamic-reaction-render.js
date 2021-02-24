@@ -124,7 +124,7 @@ const UIupdater = () => {
   let cr2 = $("#cr2").val();
   let cp1 = $("#cp1").val();
   let cp2 = $("#cp2").val();
-  // console.log(cr1, cr2, cp1, cp2);
+  console.log(cr1, cr2, cp1, cp2);
   reactants.nodes = [];
   reactants.links = [];
   // console.log(moleculeObj);
