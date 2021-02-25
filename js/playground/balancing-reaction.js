@@ -103,4 +103,17 @@ $("#CheckTheBalanceBtn").on("click", () => {
       .removeClass("alert-success");
     $("#modelBorderFrame").attr("style", "border: 3px solid red");
   }
+
+  //Cacluclate Random time for modal
+  let loadTime = Math.random() * 2000;
+  setTimeout(() => {
+    $("#reactionLoading").addClass("d-none");
+    $("#resultDialogue").removeClass("d-none");
+  }, loadTime);
+});
+
+//Closing the modal revive the original conditions
+$("#exampleModal").on("hidden.bs.modal", function () {
+  $("#reactionLoading").removeClass("d-none");
+  $("#resultDialogue").addClass("d-none");
 });

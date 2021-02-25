@@ -144,3 +144,9 @@ body {
   border-radius: 50%;
   float: left;
 }
+
+.reactionLoading {
+  width: 40%;
+  margin-top: 10%;
+  margin-left: 35%;
+}
