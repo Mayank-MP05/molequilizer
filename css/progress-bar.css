@@ -73,25 +73,33 @@
 .progress-bar-circular.blue .progress-bar-circular-bar {
   border-color: #049dff;
 }
-.progress-bar-circular.blue .progress-bar-circular-left .progress-bar-circular-bar {
+.progress-bar-circular.blue
+  .progress-bar-circular-left
+  .progress-bar-circular-bar {
   animation: loading-2 1.5s linear forwards 1.8s;
 }
 .progress-bar-circular.yellow .progress-bar-circular-bar {
   border-color: #fdba04;
 }
-.progress-bar-circular.yellow .progress-bar-circular-left .progress-bar-circular-bar {
+.progress-bar-circular.yellow
+  .progress-bar-circular-left
+  .progress-bar-circular-bar {
   animation: loading-3 1s linear forwards 1.8s;
 }
 .progress-bar-circular.pink .progress-bar-circular-bar {
   border-color: #ed687c;
 }
-.progress-bar-circular.pink .progress-bar-circular-left .progress-bar-circular-bar {
+.progress-bar-circular.pink
+  .progress-bar-circular-left
+  .progress-bar-circular-bar {
   animation: loading-4 0.4s linear forwards 1.8s;
 }
 .progress-bar-circular.green .progress-bar-circular-bar {
   border-color: #1abc9c;
 }
-.progress-bar-circular.green .progress-bar-circular-left .progress-bar-circular-bar {
+.progress-bar-circular.green
+  .progress-bar-circular-left
+  .progress-bar-circular-bar {
   animation: loading-5 1.2s linear forwards 1.8s;
 }
 @keyframes loading-1 {

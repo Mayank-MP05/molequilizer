@@ -20,11 +20,12 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
     // window.alert("hi" + " " + user.uid);
+
     var userid = user.uid;
     var nam = user.displayName;
     joinInTriggerBtn.hide();
     dropdownTriggerBtn.show();
-    console.log(user);
+    // console.log(user);
     if (user.photoURL)
       $("#UserImg").attr("src", imgSrcArr[parseInt(user.photoURL)]);
   } else {

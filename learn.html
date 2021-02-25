@@ -10,6 +10,7 @@
       href="/img/moliquilizer-logo-favicon.ico"
     />
     <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/learn.css" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
@@ -88,32 +89,30 @@
     </nav>
 
     <div class="container">
-      <div class="card my-3">
+      <div class="m-3 progress-card">
         <div class="row p-2">
-          <div class="m-auto col-md-7">
-            <h5>Current Lesson :</h5>
-            <h5>Next Lesson :</h5>
-            <div class="progress">
+          <div class="m-auto col-md-7 p-0">
+            <h5 id="currLesson">Current Lesson :</h5>
+            <h5 id="nextLesson">Next Lesson :</h5>
+            <hr class="m-4" />
+            <div class="progress" style="width: 105%" class="my-2">
+              <div class="zero success-color"></div>
+              <div class="one success-color"></div>
+              <div class="two success-color"></div>
+              <div class="three success-color"></div>
+              <div class="four success-color"></div>
+              <div class="five success-color"></div>
+              <div class="six success-color"></div>
+              <div class="seven success-color"></div>
               <div
-                class="progress-bar progress-bar-striped bg-success progress-bar-animated"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
+                class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
+                style="width: 0%"
+                id="ProgressBarIndicator"
               ></div>
             </div>
           </div>
           <div class="ml-auto col-md-4">
-            <div class="progress-bar-circular blue">
-              <span class="progress-bar-circular-left">
-                <span class="progress-bar-circular-bar"></span>
-              </span>
-              <span class="progress-bar-circular-right">
-                <span class="progress-bar-circular-bar"></span>
-              </span>
-              <div class="progress-bar-circular-value">90%</div>
-            </div>
+            <img src="./img/learn/Testtube.gif" class="testTubeImg" />
           </div>
         </div>
       </div>
@@ -219,10 +218,15 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
     <script src="./js/firebase/init.js"></script>
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
-    <script src="./js/learn-renderer.js"></script>
+    <script src="./js/learn/firebase-progress-sync.js"></script>
+    <script src="./js/learn/learn-renderer.js"></script>
   </body>
 </html>

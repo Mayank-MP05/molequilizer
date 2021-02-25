@@ -31,16 +31,103 @@ const VideosData = [
   },
 ];
 
+const db = firebase.firestore();
 let learnPageState = {
   current: "",
   next: "",
   progress: 0,
-  completedArr: [false, true, true, false, false, false],
+  completedArr: [false, false, false, false, false, false],
 };
 
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    db.collection("progress")
+      .doc(user.email)
+      .get()
+      .then((doc) => {
+        console.log("Document data:", doc.data());
+        learnPageState.completedArr = doc.data().arr;
+        renderList();
+        let c = 0;
+        learnPageState.completedArr.forEach((el) => {
+          if (el) c++;
+        });
+        progress = (c / learnPageState.completedArr.length) * 100;
+        console.log(progress);
+        $("#ProgressBarIndicator").attr("style", `width:${progress}%;`);
+        let currIndex;
+        c = 0;
+        // learnPageState.completedArr.forEach((el) => {
+        //   if (el) c++;
+        //   else break;
+        // });
+        for (let el of learnPageState.completedArr) {
+          if (el) c++;
+          else break;
+        }
+        $("#currLesson").html(
+          `<span class="badge badge-success">Current Lesson</span> : ${
+            VideosData[c - 1].title
+          }`
+        );
+        $("#nextLesson").html(
+          `<span class="badge badge-primary">Next Lesson</span> : ${
+            VideosData[c].title ? VideosData[c].title : VideosData[0].title
+          }`
+        );
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  } else {
+    // No user is signed in.
+    /*window.location.replace("http://127.0.0.1:5500/login.html");*/
+    // window.location.href = "learn.html";
+    // alert("No user signed in");
+    //
+    $("#checkBoxLabel").hide();
+  }
+});
+
+const checkChanged = (e) => {
+  console.log(e);
+  learnPageState["completedArr"][e.id] = !learnPageState["completedArr"][e.id];
+  console.log(learnPageState.completedArr);
+  updateToFirebase(
+    firebase.auth().currentUser.email,
+    learnPageState.completedArr
+  );
+  let c = 0;
+  learnPageState.completedArr.forEach((el) => {
+    if (el) c++;
+  });
+  progress = (c / learnPageState.completedArr.length) * 100;
+  console.log(progress);
+  $("#ProgressBarIndicator").attr("style", `width:${progress}%;`);
+  let currIndex;
+  c = 0;
+  // learnPageState.completedArr.forEach((el) => {
+  //   if (el) c++;
+  //   else break;
+  // });
+  for (let el of learnPageState.completedArr) {
+    if (el) c++;
+    else break;
+  }
+  $("#currLesson").html(
+    `<span class="badge badge-success">Current Lesson</span> : ${
+      VideosData[c - 1].title
+    }`
+  );
+  $("#nextLesson").html(
+    `<span class="badge badge-primary">Next Lesson</span> : ${
+      VideosData[c].title ? VideosData[c].title : VideosData[0].title
+    }`
+  );
+};
 const renderList = () => {
   const parentX = $("#learner-parent");
-  parentX.html("hiiii");
+
   let content = "";
   let isFirst = true;
 
@@ -57,11 +144,11 @@ const renderList = () => {
                 <img src="../img/learn/video-thumbnail.png" hieght="30" width="30"/>
               <span class="pl-1 font-wieght-bold">${VideosData[i].title}</span>
             </button>
-            <label class="customcheck ml-auto"
+            <label class="customcheck ml-auto" id="checkBoxLabel"
               >Completed
-              <input type="checkbox" ${
+              <input type="checkbox"   ${
                 learnPageState.completedArr[i] ? `checked="checked"` : ""
-              } />
+              } onChange="checkChanged(this)" id="${i}"/>
               <span class="checkmark"></span>
             </label>
           </h5>
@@ -88,5 +175,3 @@ const renderList = () => {
   //console.log(content);
   parentX.html(content);
 };
-
-renderList();

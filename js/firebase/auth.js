@@ -22,7 +22,7 @@ joinInBtn.addEventListener("click", () => {
     .createUserWithEmailAndPassword(email_val, pass_val)
     .then((userCredential) => {
       // Signed in
-      var user = userCredential.user;
+      let user = userCredential.user;
       console.log(user);
       $("#errorAlert").hide();
       $("#AccountCreationAlert").show();
