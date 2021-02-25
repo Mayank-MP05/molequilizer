@@ -117,3 +117,16 @@ body {
     font-size: 18px;
   }
 }
+
+/* Playground "Reactant" and "Product" */
+#rmol > svg,
+#pmol > svg {
+  border: 10px solid green;
+}
+
+#floatingLabel {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  z-index: 1000;
+}
