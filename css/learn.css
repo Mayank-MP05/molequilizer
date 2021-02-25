@@ -61,3 +61,8 @@
   border: 5px solid #5cb85c;
   border-radius: 20px;
 }
+
+.loading {
+  width: 400px;
+  margin: auto;
+}
