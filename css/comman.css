@@ -18,3 +18,35 @@
 nav {
   border-bottom: 3px solid #63d297;
 }
+
+.emoji {
+  width: 25px;
+  height: 25px;
+  margin: auto 5px;
+  /* 
+  display: none; */
+}
+
+.nav-item:hover {
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid gray;
+}
+.dropdown-menu.dropdown-menu-right.show {
+  border-radius: 10px;
+}
+.dropdown-menu > a::selection {
+  background-color: #63d297;
+}
+#Join-In-Trigger-Button {
+  border-radius: 5px;
+  border: 1px solid #63d297;
+  background-color: #63d297;
+  color: white;
+}
+#Join-In-Trigger-Button:hover {
+  background-color: #63d29779;
+}
+.nav-item.font-weight-bold > .nav-link {
+  font-size: 18px;
+}

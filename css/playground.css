@@ -121,7 +121,7 @@ body {
 /* Playground "Reactant" and "Product" */
 #rmol > svg,
 #pmol > svg {
-  border: 10px solid green;
+  border: 10px solid #63d297;
 }
 
 #floatingLabel {
