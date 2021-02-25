@@ -257,7 +257,7 @@ const fetchReactions = () => {
     if (reaction.isP2There) {
       label += `+ ${reaction.p2_label} `;
     }
-    reactionList += `<button class="btn reactionBtn btn-outline-info w-100 m-2 p-1" onclick="setReaction(${index})">${label}</button>`;
+    reactionList += `<button class="btn reactionBtn font-weight-bold w-100 m-2 p-1" onclick="setReaction(${index})"><img src="./img/playground/test-tube.png" style="float:left" width="30"/>${label}</button>`;
   }
   $("#reactionRenderedHere").html(reactionList);
 };
@@ -271,12 +271,3 @@ const setReaction = (index) => {
   closeNav();
 };
 console.log(moleculeObj);
-
-let row = `
-<tr>
-<th scope="row">1</th>
-<td>Mark</td>
-<td>Otto</td>
-<td>@mdo</td>
-</tr>
-`;

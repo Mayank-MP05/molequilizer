@@ -128,5 +128,19 @@ body {
   position: absolute;
   top: 0%;
   right: 0;
-  z-index: 1000;
+  z-index: 900;
+  background-color: green;
+  padding: 5px;
+  color: white;
+}
+
+.reactionBtn:hover {
+  background-color: gray;
+}
+
+.practice-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  float: left;
 }
