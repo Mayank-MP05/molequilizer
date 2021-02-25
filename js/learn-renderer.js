@@ -1,4 +1,4 @@
-const data = [
+const VideosData = [
   {
     title: "Chemical reactions introduction",
     videoURL: `<iframe width="100%" height="397" src="https://www.youtube.com/embed/TStjgUmL1RQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
@@ -31,13 +31,20 @@ const data = [
   },
 ];
 
+let learnPageState = {
+  current: "",
+  next: "",
+  progress: 0,
+  completedArr: [false, true, true, false, false, false],
+};
+
 const renderList = () => {
   const parentX = $("#learner-parent");
   parentX.html("hiiii");
   let content = "";
   let isFirst = true;
 
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < VideosData.length; i++) {
     content += `      
       <div class="accordion" id="accordionExample${i}">
       <div class="card m-0">
@@ -48,11 +55,13 @@ const renderList = () => {
             aria-expanded="true"
             aria-controls="collapseOne${i}">
                 <img src="../img/learn/video-thumbnail.png" hieght="30" width="30"/>
-              <span class="pl-1 font-wieght-bold">${data[i].title}</span>
+              <span class="pl-1 font-wieght-bold">${VideosData[i].title}</span>
             </button>
             <label class="customcheck ml-auto"
               >Completed
-              <input type="checkbox" checked="checked" />
+              <input type="checkbox" ${
+                learnPageState.completedArr[i] ? `checked="checked"` : ""
+              } />
               <span class="checkmark"></span>
             </label>
           </h5>
@@ -65,7 +74,7 @@ const renderList = () => {
           data-parent="#accordionExample${i}"
         >
           <div class="card-body">
-            ${data[i].videoURL}
+            ${VideosData[i].videoURL}
           </div>
         </div>
       </div>

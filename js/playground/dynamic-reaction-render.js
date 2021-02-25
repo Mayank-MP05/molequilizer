@@ -74,11 +74,19 @@ const constReactionSelectUIUpdator = () => {
     elR2.hide();
     cr2.hide();
     $("#r2plus").hide();
+  } else {
+    elR2.show();
+    cr2.show();
+    $("#r2plus").show();
   }
   if (!moleculeObj.isP2There) {
     elP2.hide();
     cp2.hide();
     $("#p2plus").hide();
+  } else {
+    elP2.show();
+    cp2.show();
+    $("#p2plus").show();
   }
 };
 const getThroughDB = (ReactionIndex) => {
