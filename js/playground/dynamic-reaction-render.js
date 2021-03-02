@@ -247,6 +247,8 @@ UIupdater();
 const fetchReactions = () => {
   let reactionList = "",
     label;
+  let spanArr = ["Easy", "Medium", "Hard"];
+  let spanClassArr = ["success", "info", "danger"];
   for (let [index, reaction] of GiantDB.entries()) {
     label = `${reaction.r1_label} `;
     if (reaction.isR2There) {
@@ -257,7 +259,10 @@ const fetchReactions = () => {
     if (reaction.isP2There) {
       label += `+ ${reaction.p2_label} `;
     }
-    reactionList += `<button class="btn reactionBtn font-weight-bold w-100 m-2 p-1" onclick="setReaction(${index})"><img src="./img/playground/test-tube.png" style="float:left" width="30"/>${label}</button>`;
+
+    reactionList += `<button class="btn reactionBtn font-weight-bold w-100 m-2 p-1" onclick="setReaction(${index})"><img src="./img/playground/test-tube.png" style="float:left" width="30"/>${label}<span class="badge reactionSpan badge-${
+      spanClassArr[reaction.DIFFICULTY - 1]
+    }">${spanArr[reaction.DIFFICULTY - 1]}</span></button>`;
   }
   $("#reactionRenderedHere").html(reactionList);
 };

@@ -135,7 +135,7 @@ body {
 }
 
 .reactionBtn:hover {
-  background-color: gray;
+  background-color: #63d29775;
 }
 
 .practice-img {
@@ -149,4 +149,9 @@ body {
   width: 40%;
   margin-top: 10%;
   margin-left: 35%;
+}
+
+.reactionSpan {
+  float: right;
+  margin: 5px;
 }

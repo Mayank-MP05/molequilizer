@@ -190,7 +190,7 @@ let GiantDB = [
   {
     REACTION_LABEL:
       "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
-    DIFFICULTY: 1,
+    DIFFICULTY: 3,
     isR2There: true,
     isP2There: true,
     r1_label: "C<sub>2</sub>H<sub>6</sub>",
@@ -652,7 +652,7 @@ let GiantDB = [
   {
     REACTION_LABEL:
       "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
-    DIFFICULTY: 1,
+    DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
     r1_label: "NH<sub>3</sub>",
@@ -788,7 +788,7 @@ let GiantDB = [
   {
     REACTION_LABEL:
       "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
-    DIFFICULTY: 1,
+    DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
     r1_label: "SeCl<sub>6</sub>",
