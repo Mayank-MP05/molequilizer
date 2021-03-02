@@ -266,6 +266,10 @@ fetchReactions();
 const setReaction = (index) => {
   // console.log("setreaction");
   // console.log(index);
+  cr1.val(1);
+  cr2.val(1);
+  cp1.val(1);
+  cp2.val(1);
   getThroughDB(index);
   UIupdater();
   closeNav();
