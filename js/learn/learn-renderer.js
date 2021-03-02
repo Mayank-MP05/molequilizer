@@ -75,9 +75,12 @@ firebase.auth().onAuthStateChanged(function (user) {
             VideosData[c].title ? VideosData[c].title : VideosData[0].title
           }`
         );
+        $("#checkBoxLabel").show();
+        $(".progress-card").show();
       })
       .catch((error) => {
         console.log("Error getting document:", error);
+        $(".progress-card").hide();
       });
   } else {
     // No user is signed in.
@@ -85,7 +88,10 @@ firebase.auth().onAuthStateChanged(function (user) {
     // window.location.href = "learn.html";
     // alert("No user signed in");
     //
-    $("#checkBoxLabel").hide();
+    (learnPageState.completedArr = [false, false, false, false, false, false]),
+      $("#checkBoxLabel").hide();
+    $(".progress-card").hide();
+    renderList();
   }
 });
 
