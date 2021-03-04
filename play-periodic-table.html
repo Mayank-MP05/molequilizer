@@ -3,21 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tips to Remember Periodic Table | Team Molequilizer</title>
+    <title>Play balancing the Chemical Reaction game | Team Molequilizer</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/img/moliquilizer-logo-favicon.ico"
     />
-    <link rel="stylesheet" href="./css/comman.css" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/comman.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
-    <link rel="stylesheet" href="./css/modal-form.css" />
+    <link rel="stylesheet" href="./css/playground.css" />
+    <link rel="stylesheet" href="./css/play-periodic-table.css" />
   </head>
   <body>
+    <div id="mySidenav" class="sidenav bg-light">
+      <div class="d-flex align-items-center justify-content-center m-0 p-3">
+        <img src="./img/playground/practice.png" class="practice-img" />
+        <h3 class="my-auto">Practice</h3>
+        <a
+          href="javascript:void(0)"
+          class="closebtn ml-auto p-0"
+          onclick="closeNav()"
+          >×</a
+        >
+      </div>
+      <div class="w-100 d-flex flex-column m-0 p-1" id="reactionRenderedHere">
+        <button class="btn btn-outline-info w-100 m-2 p-1">Reaction 1</button>
+      </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
-      <img src="./img/nav/Moleq Nav Logo.png" class="nav-icon-logo" />
-      <button
+      <img src="./img/nav/Moleq Nav Logo.png" class="nav-icon-logo" /><button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -44,7 +59,7 @@
           <button
             type="button"
             id="Join-In-Trigger-Button"
-            class="btn mx-1 font-weight-bold"
+            class="btn btn-outline-info mx-1 font-weight-bold"
             data-toggle="modal"
             data-target="#exampleModalCenter"
           >
@@ -86,9 +101,161 @@
       </div>
     </nav>
 
-    <div class="container">
-      <h3>Periodic Table Game</h3>
+    <div class="row p-0 m-0">
+      <div class="col-md-6">
+        <div id="rmol" class="col"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="pmol" class="col"></div>
+      </div>
     </div>
+
+    <div class="p-0 m-0 sticky-bottom">
+      <div
+        class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
+      >
+        <div>
+          <button class="btn lgx-btn" id="CheckTheBalanceBtn">
+            Check the Balance
+          </button>
+          <button
+            class="btn lgx-btn bg-info p-0"
+            data-toggle="modal"
+            data-target="#exampleModal2"
+          >
+            <img src="./img/learn/idea.png" width="55" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Chemical Reaction Balancer modal starts here -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <img
+        src="./img/playground/chemical_reaction_animation.gif"
+        class="reactionLoading"
+        id="reactionLoading"
+        alt=""
+      />
+      <div class="modal-dialog d-none" id="resultDialogue" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Chemical Reaction Results
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body"
+            id="modelBorderFrame"
+            style="border: 3px solid greenyellow"
+          >
+            <div
+              class="alert"
+              role="alert"
+              colspan="4"
+              id="ReactionStatusAlert"
+            >
+              Reaction is Balanced
+            </div>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Element</th>
+                  <th scope="col">LHS Count</th>
+                  <th scope="col">RHS Count</th>
+                </tr>
+              </thead>
+              <tbody id="reactionElementCountTable">
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Fe</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Cl</td>
+                  <td>6</td>
+                  <td>6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chemical Reaction Balancer modal Ends here -->
+
+    <!-- Modal 2 - Hint Modal start here -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <img src="img/learn/idea.png" width="40" />Chemical Reaction
+              Balancing Hints
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="font-weight-bold">The Law of Conservation of Mass</p>
+            <p>
+              The Law of Conservation of Mass dates from Antoine Lavoisier's
+              1789 discovery that mass is neither created nor destroyed in
+              chemical reactions. In other words, the mass of any one element at
+              the beginning of a reaction will equal the mass of that element at
+              the end of the reaction. If we account for all reactants and
+              products in a chemical reaction, the total mass will be the same
+              at any point in time in any closed system.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hint modal ends here -->
 
     <!-- Login Modal Start here -->
     <div
@@ -186,7 +353,11 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"
+      integrity="sha512-ilnmzGTqmx3gXTbd1eLUf6LTgAFEULf1d1Pf18LR3o+IQjt1j+rtlOHX1upJUSdWlganBwNe0E7U4U5iWH+uYw=="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
