@@ -16,21 +16,6 @@
     <link rel="stylesheet" href="./css/play-periodic-table.css" />
   </head>
   <body>
-    <div id="mySidenav" class="sidenav bg-light">
-      <div class="d-flex align-items-center justify-content-center m-0 p-3">
-        <img src="./img/playground/practice.png" class="practice-img" />
-        <h3 class="my-auto">Practice</h3>
-        <a
-          href="javascript:void(0)"
-          class="closebtn ml-auto p-0"
-          onclick="closeNav()"
-          >×</a
-        >
-      </div>
-      <div class="w-100 d-flex flex-column m-0 p-1" id="reactionRenderedHere">
-        <button class="btn btn-outline-info w-100 m-2 p-1">Reaction 1</button>
-      </div>
-    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
       <img src="./img/nav/Moleq Nav Logo.png" class="nav-icon-logo" /><button
         class="navbar-toggler"
@@ -102,11 +87,33 @@
     </nav>
 
     <div class="row p-0 m-0">
-      <div class="col-md-6">
-        <div id="rmol" class="col"></div>
-      </div>
-      <div class="col-md-6">
-        <div id="pmol" class="col"></div>
+      <button class="btn btn-success my-2 ml-auto">New Reaction</button>
+    </div>
+
+    <div class="row p-0 m-0">
+      <div class="quiz-container m-auto" id="quiz">
+        <div class="quiz-header">
+          <h2 id="question">This is some Question Text</h2>
+          <ul>
+            <li>
+              <input type="radio" id="a" name="answer" class="answer" />
+              <label id="a_text" for="a">cl - chlorine</label>
+            </li>
+            <li>
+              <input type="radio" id="b" name="answer" class="answer" />
+              <label id="b_text" for="b">f - floreing</label>
+            </li>
+            <li>
+              <input type="radio" id="c" name="answer" class="answer" />
+              <label id="c_text" for="c">i - iodine</label>
+            </li>
+            <li>
+              <input type="radio" id="d" name="answer" class="answer" />
+              <label id="d_text" for="d">br - bromide</label>
+            </li>
+          </ul>
+        </div>
+        <button id="submit">Check the Answer</button>
       </div>
     </div>
 
@@ -365,5 +372,7 @@
     <script src="./js/firebase/init.js"></script>
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
+
+    <script src="./js/play-periodic-table/quizesDB.js"></script>
   </body>
 </html>
