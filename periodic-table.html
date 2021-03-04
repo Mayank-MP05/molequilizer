@@ -10,6 +10,7 @@
       href="/img/moliquilizer-logo-favicon.ico"
     />
     <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/periodic-table.css">
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
@@ -87,7 +88,129 @@
     </nav>
 
     <div class="container">
-      <h3>Perodic table rendered here</h3>
+      <div class="maindiv">
+
+        <!-- <div class="banner"></div> -->
+    
+          <div class="roundcorners leftdiv">
+    
+          <table style="width:100%;">
+    
+                  <tr><td><div class="label">Name</div></td></tr>
+                  <tr><td><input type="text" id="namefilter" style="width:124px" /></td></tr>
+    
+                  <tr><td><div class="label">Atomic Number</div></td></tr>
+                  <tr><td><input type="number" id="atomicnumberfilter" style="width:124px" min=1 max=118 /></td></tr>
+    
+                  <tr><td><div class="label">Symbol</div></td></tr>
+                  <tr><td><input type="text" id="symbolfilter" style="width:124px" /></td></tr>
+    
+            
+    
+    
+                  <tr><td><div class="label">Group</div></td></tr>
+                  <tr><td>
+              <select id="groupfilter">
+                  <option value=""></option>
+                  <option value="0">none</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+              </select>
+            </td></tr>
+    
+                  <tr><td><div class="label">Period</div></td></tr>
+                  <tr><td>
+              <select id="periodfilter">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+              </select>
+            </td></tr>
+    
+                  
+    
+                    <tr>
+                        <td colspan="2"><div id="btnApplyFilter" class="button">Apply Filter</div></td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2"><div id="btnClearFilter" class="button">Clear Filter</div></td>
+                    </tr>
+    
+            <tr>
+              <td><div class="label">Color by Category</div></td>
+            </tr>
+                  <tr>
+              <td class="radiobutton"><div class="radiobutton"><input type="radio" name="colorby" value="colorbycategory" id="colorcategory" checked /></div></td>
+            </tr>
+    
+                  <tr>
+              <td><div class="label">Color by Block</div></td>
+            </tr>
+                  <tr>
+              <td class="radiobutton"><div class="radiobutton"><input type="radio" name="colorby" value="colorbyblock" id="colorblock" /></div></td>
+            </tr>
+    
+                </table>
+    
+          </div>
+    
+          <div id="periodictablediv" class="roundcorners tablediv">
+          <table id="periodictable" style="width: 100%; height: 100%; border-spacing: 4px;"></table>
+        </div>
+    
+    
+      <div id="infoboxbackground"
+      style="background-color: #000000; position: absolute;
+      left: 0px; right: 0px; top: 0px; bottom: 0px;
+        opacity: 0.8; visibility: hidden;"></div>
+    
+      <div id="infobox"
+       class="border roundcorners"
+      style="position:absolute;  width: 500px; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFFFFF; visibility: hidden;">
+    
+        <table style="width:100%;">
+            <tr><th colspan="2" id="infoName" class="thelementname"></th></tr>
+            <tr><th>Atomic number</th><td id="infoAtomicNumber"></th></tr>
+              <tr><th>Chemical Symbol</th><td id="infoChemicalSymbol"></td></tr>
+              <tr><th>Category</th><td id="infoCategory"></td></tr>
+              <tr><th>Atomic weight - conventional</th><td id="infoAtomicWeightConventional"></td></tr>
+              <tr><th>Atomic weight - standard</th><td id="infoAtomicWeightStandard"></td></tr>
+              <tr><th>Occurrence</th><td id="infoOccurrence"></td></tr>
+              <tr><th>State of matter</th><td id="infoStateOfMatter"></td></tr>
+              <tr><th>Group</th><td id="infoGroup"></td></tr>
+              <tr><th>Period</th><td id="infoPeriod"></td></tr>
+              <tr><th>Block</th><td id="infoBlock"></td></tr>
+              <tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Close</div></td></tr>
+        </table>
+    
+      </div>
+    </div>
+    </div>
+
+    <div class="container d-none">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquam porro mollitia odit voluptates nihil laborum ut odio fugiat, nulla voluptatibus vel inventore error culpa ullam voluptatem. Beatae, aliquam ducimus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo culpa voluptas perspiciatis, architecto quidem quas illo optio fugit eos aperiam provident sequi vel numquam impedit deserunt, magni alias ut obcaecati et placeat iusto id quaerat iste. Fugit deserunt laboriosam, inventore voluptas consectetur saepe voluptate rem eligendi dolore unde maiores! Tenetur, laboriosam quae expedita ea, cumque, ipsum iure sequi nisi unde fugit doloremque iusto deserunt nulla laborum ullam quibusdam autem quaerat facilis quo dolor velit! Voluptatum facere ut cupiditate optio sed recusandae id blanditiis officia quo aliquid? Adipisci quos tenetur illum ipsam perspiciatis fugiat repudiandae. Id consectetur necessitatibus dignissimos nihil rerum rem ex vitae minus, libero, incidunt ullam tenetur in. Asperiores adipisci fuga deleniti voluptatum expedita vel, illum saepe explicabo? Excepturi expedita eligendi cum optio harum ad, nam ipsum accusamus voluptatum ducimus modi aperiam, nesciunt dolore officiis incidunt aut tempora quod distinctio dignissimos placeat, nemo magni a perferendis ratione? Fuga natus quod officiis, commodi nam consectetur voluptates, quos in sunt, nobis necessitatibus nesciunt repellendus aliquid qui asperiores quisquam corrupti similique? Quos quisquam nostrum aspernatur, inventore iusto ad cumque quas facere tenetur, odio, deserunt exercitationem rerum provident aperiam ut tempore magnam iste voluptates beatae eligendi dolor suscipit? Excepturi mollitia praesentium pariatur ea. Tempora aut voluptas quis quaerat quos asperiores fugit reprehenderit nisi hic perferendis quo deleniti laudantium velit amet totam iusto beatae, sapiente cupiditate quia adipisci quibusdam harum. Quaerat autem fuga dolor, consequuntur eligendi id tempora et iure sed aliquid soluta deleniti assumenda animi, harum ad voluptates sapiente consequatur nemo reprehenderit ea accusantium. Reprehenderit atque, fugiat officia pariatur provident dolore officiis ad adipisci aliquid, quaerat voluptate cumque beatae dolores magni veniam. Provident aperiam voluptates quasi neque pariatur autem eligendi quis enim impedit facilis, animi distinctio accusantium voluptate tempora suscipit? Rem optio labore consequatur vitae unde illum molestiae aliquid, fugiat nemo ipsam expedita?
     </div>
 
     <!-- Login Modal Start here -->
@@ -194,5 +317,11 @@
     <script src="./js/firebase/init.js"></script>
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
+
+    <script src="./js/periodic-table/data.js"></script>
+    <script src="./js/periodic-table/periodictable.js"></script>
+    <script src="./js/periodic-table/periodictableinfobox.js"></script>
+    <script src="./js/periodic-table/periodictabledisplay.js"></script>
+    <script src="./js/periodic-table/periodictablepage.js"></script>
   </body>
 </html>
