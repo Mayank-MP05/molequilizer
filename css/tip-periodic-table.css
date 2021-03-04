@@ -1,0 +1,11 @@
+td,
+th {
+  border: 3px solid gray;
+  padding: 5px;
+}
+
+tbody > tr:first-child > td,
+tbody > tr:first-child > th {
+  background-color: #63d2972c;
+  border: 2px solid#63d297;
+}
