@@ -49,6 +49,12 @@ const commanFunctionForButtonClick = (isAnswer = true) => {
         $(`#bohr-container-${index + 1}`).hide();
       }
     });
+  } else {
+    PeriodicGameState.quizArr.map((el, index) => {
+      if (el === PeriodicGameState.answerElement) {
+        $(`#bohr-container-${index + 1}`).show();
+      }
+    });
   }
 
   let sqaureBoxHTML = ``;

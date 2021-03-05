@@ -22,24 +22,28 @@ const PeriodicGameState = {
   correctAns: 0,
   selctedAns: 0,
   hindiHint: `
-  <strong>B</strong>egan, <strong>A</strong>a<strong>l</strong>oo,
-  <strong>Ga</strong>jar <strong>In T</strong>hela
+
 `,
-  englishHint: "<strong>B A G I T</strong>",
+  englishHint: "",
   period: "",
   group: "",
 };
 
 const GetNewQuestion = () => {
   console.log("UI Updator Called...");
-  PeriodicGameState.quizArr = quizesDB[0];
+  let randomIndex = Math.floor(Math.random() * quizesDB.length);
+  PeriodicGameState.quizArr = quizesDB[randomIndex].quizData;
 
+  PeriodicGameState.atomicNoArr = [];
   PeriodicGameState.quizArr.map((el, index) => {
     let obj = periodictabledata.filter((el2) => el2.symbol === el);
     PeriodicGameState.atomicNoArr.push(obj[0].atomicnumber);
   });
 
-  let quiz = quizesDB[0];
+  PeriodicGameState.hindiHint = quizesDB[randomIndex].hindiHint;
+  PeriodicGameState.englishHint = quizesDB[randomIndex].englishHint;
+
+  let quiz = PeriodicGameState.quizArr;
   console.log(quiz);
   let ansIndex = Math.floor(Math.random() * quiz.length);
   PeriodicGameState.answerElement = PeriodicGameState.quizArr[ansIndex];
@@ -121,3 +125,9 @@ const UIupdator = () => {
 
 GetNewQuestion();
 UIupdator();
+
+$(".new-reaction-btn").on("click", () => {
+  GetNewQuestion();
+  UIupdator();
+  bohrModelUpdator();
+});
