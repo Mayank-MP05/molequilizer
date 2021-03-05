@@ -132,6 +132,7 @@ li label {
   align-items: center;
   width: 150px;
   height: 150px;
+  margin: 5px;
   background-color: #63d29785;
 }
 

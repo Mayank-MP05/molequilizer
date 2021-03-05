@@ -40,10 +40,10 @@ isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test
   navigator.userAgent
 );
 
-let arr = [2, 10, 18, 26];
+let arr = PeriodicGameState.atomicNoArr;
 
 if (!isMobile) {
-  for (var i = 1; i <= 4; i++) {
+  for (var i = 1; i <= arr.length; i++) {
     // iterate over all existing atoms
     (function (i) {
       setTimeout(function () {
@@ -57,13 +57,13 @@ if (!isMobile) {
         var newAtom = new Atom(atomConfig);
         var $atom = $(`#atom-${i}`);
         $atom.addClass("clickable-atom");
-        newAtom.infoFunc = $atom.click(function () {
-          $atom.attr("data-toggle", "modal");
-          $atom.attr("data-target", ".bs-example-modal-lg");
-          $(".modal-title").text(newAtom.elementName);
-          $(".wiki-url").attr("href", newAtom.wikiUrl);
-          $(".wiki-summary").text(newAtom.wikiSummary);
-        });
+        // newAtom.infoFunc = $atom.click(function () {
+        //   $atom.attr("data-toggle", "modal");
+        //   $atom.attr("data-target", ".bs-example-modal-lg");
+        //   $(".modal-title").text(newAtom.elementName);
+        //   $(".wiki-url").attr("href", newAtom.wikiUrl);
+        //   $(".wiki-summary").text(newAtom.wikiSummary);
+        // });
         var rotateConfig = { speed: 300, clockwise: true };
         newAtom.rotate(rotateConfig);
         myAtoms.push(newAtom);

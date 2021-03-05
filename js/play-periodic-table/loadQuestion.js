@@ -12,7 +12,7 @@ $("#question");
 
 const PeriodicGameState = {
   quizArr: [],
-  atomicNoArr: [10, 20, 30, 12],
+  atomicNoArr: [],
   question: "",
   optionA: "",
   optionB: "",
@@ -21,8 +21,11 @@ const PeriodicGameState = {
   answerElement: "",
   correctAns: 0,
   selctedAns: 0,
-  hindiHint: "",
-  englishHint: "",
+  hindiHint: `
+  <strong>B</strong>egan, <strong>A</strong>a<strong>l</strong>oo,
+  <strong>Ga</strong>jar <strong>In T</strong>hela
+`,
+  englishHint: "<strong>B A G I T</strong>",
   period: "",
   group: "",
 };
@@ -30,6 +33,12 @@ const PeriodicGameState = {
 const GetNewQuestion = () => {
   console.log("UI Updator Called...");
   PeriodicGameState.quizArr = quizesDB[0];
+
+  PeriodicGameState.quizArr.map((el, index) => {
+    let obj = periodictabledata.filter((el2) => el2.symbol === el);
+    PeriodicGameState.atomicNoArr.push(obj[0].atomicnumber);
+  });
+
   let quiz = quizesDB[0];
   console.log(quiz);
   let ansIndex = Math.floor(Math.random() * quiz.length);

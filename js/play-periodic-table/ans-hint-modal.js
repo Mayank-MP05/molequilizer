@@ -18,39 +18,58 @@
  */
 
 $("#AnswerExplanationBtn").on("click", () => {
+  jQuery.noConflict();
   console.log("Asnwer Box");
+  $(".modal-title").text("Answer of the Quiz");
   commanFunctionForButtonClick(true);
 
   $("#exampleModal2").modal("show");
 });
 
 $("#hintTriggerBtn").on("click", () => {
+  jQuery.noConflict();
+
   console.log("Hint Box");
+  $(".modal-title").text("Hints - Sharpen Your Brain ...");
   commanFunctionForButtonClick(false);
   $("#exampleModal2").modal("show");
 });
 
 const commanFunctionForButtonClick = (isAnswer = true) => {
   $(".hindiHint").html(
-    `<span class="badge badge-success">Hindi Hint : </span>{Content of the Hindi Slang}`
+    `<span class="badge badge-success">Hindi Hint : </span>${PeriodicGameState.hindiHint}`
   );
   $(".englishHint").html(
-    `<span class="badge badge-primary">English Hint : </span>{Content of the Hindi Slang}`
+    `<span class="badge badge-primary">English Hint :  </span>${PeriodicGameState.englishHint}`
   );
 
-  console.log(atomic_data, periodictabledata);
+  if (!isAnswer) {
+    PeriodicGameState.quizArr.map((el, index) => {
+      if (el === PeriodicGameState.answerElement) {
+        $(`#bohr-container-${index + 1}`).hide();
+      }
+    });
+  }
 
   let sqaureBoxHTML = ``;
   PeriodicGameState.quizArr.map((el, index) => {
-    sqaureBoxHTML += `<div class="squareElement">
-    <p class="element-name">${atomic_data[`${0}`].element_name}</p>
-    <p class="atomic-no">${PeriodicGameState.atomicNoArr[index]}</p>
+    let obj = periodictabledata.filter((el2) => el2.symbol === el);
+    obj = obj[0];
+    if (!isAnswer && el === PeriodicGameState.answerElement) {
+      sqaureBoxHTML += `<div class="squareElement bg-danger">
+    <p class="atomic-symbol">?</p>
+
+  </div>`;
+    } else {
+      sqaureBoxHTML += `<div class="squareElement">
+    <p class="element-name">${obj.name}</p>
+    <p class="atomic-no">${obj.atomicnumber}</p>
     <p class="atomic-symbol">${el}</p>
     <p class="atomic-weight">
-      ${periodictabledata[PeriodicGameState.atomicNoArr[index]].atomicweight}
+      ${obj.atomicweight}
     </p>
   </div>`;
+    }
   });
   $(".squareElementDiv").html(sqaureBoxHTML);
-  console.log(atomic_data);
 };
