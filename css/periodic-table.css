@@ -271,7 +271,7 @@ input[type="radio"] {
   color: #000000;
 }
 
-.alkalimetal {
+/* .alkalimetal {
   background-color: #ff6666;
 }
 
@@ -309,8 +309,9 @@ input[type="radio"] {
 
 .unknown {
   background-color: #e8e8e8;
-}
+} */
 
+/* Block wise color distrubution */
 .sblock {
   background-color: #ff9999;
 }
