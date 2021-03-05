@@ -95,22 +95,48 @@
         <div class="quiz-header">
           <h2 id="question">This is some Question Text</h2>
           <ul>
-            <li>
-              <input type="radio" id="a" name="answer" class="answer" />
-              <label id="a_text" for="a">cl - chlorine</label>
-            </li>
-            <li>
-              <input type="radio" id="b" name="answer" class="answer" />
-              <label id="b_text" for="b">f - floreing</label>
-            </li>
-            <li>
-              <input type="radio" id="c" name="answer" class="answer" />
-              <label id="c_text" for="c">i - iodine</label>
-            </li>
-            <li>
-              <input type="radio" id="d" name="answer" class="answer" />
-              <label id="d_text" for="d">br - bromide</label>
-            </li>
+            <form id="quiz-form">
+              <li>
+                <input
+                  type="radio"
+                  id="a"
+                  name="answer"
+                  class="answer"
+                  value="a"
+                />
+                <label id="a_text" for="a">cl - chlorine</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="b"
+                  name="answer"
+                  class="answer"
+                  value="b"
+                />
+                <label id="b_text" for="b">f - floreing</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="c"
+                  name="answer"
+                  class="answer"
+                  value="c"
+                />
+                <label id="c_text" for="c">i - iodine</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="d"
+                  name="answer"
+                  class="answer"
+                  value="d"
+                />
+                <label id="d_text" for="d">br - bromide</label>
+              </li>
+            </form>
           </ul>
         </div>
         <button id="submit">Check the Answer</button>
@@ -374,6 +400,8 @@
     <script src="./js/firebase/auth.js"></script>
 
     <script src="./js/play-periodic-table/quizesDB.js"></script>
+    <script src="./js/periodic-table/data.js"></script>
+    <script src="./js/play-periodic-table/atomic_data.js"></script>
     <script src="./js/play-periodic-table/loadQuestion.js"></script>
   </body>
 </html>

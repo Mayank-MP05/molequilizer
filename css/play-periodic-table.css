@@ -76,3 +76,17 @@ li label {
   background: #63d29734;
   border: 2px solid #63d297;
 }
+
+.quiz-container input {
+  width: 30px;
+  height: 30px;
+  margin: 10px 7px 7px 7px;
+}
+
+.quiz-container label {
+  width: 80%;
+  vertical-align: bottom;
+}
+
+.quiz-container ul li {
+}
