@@ -40,21 +40,35 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item font-weight-bold">
-            <a class="nav-link" href="./learn.html">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="learnDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="./img/nav/learn-emoji.png" class="emoji" />Learn
               <span class="sr-only">(current)</span></a
             >
-          </li>
-          <li class="nav-item font-weight-bold">
-            <a class="nav-link" href="./playground.html"
-              ><img src="./img/nav/play-emoji.png" class="emoji" />Play</a
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="learnDropdownMenuButton">
+              <a class="dropdown-item" href="./types-of-reactions.html">Types of Chemical Reaction</a>
+              <a class="dropdown-item" href="./learn-balancing-the-chemical-reaction.html">Balancing the Chemical Reaction</a>
+              <a class="dropdown-item" href="./view-periodic-table.html">View Periodic Table</a>
+              <a class="dropdown-item" href="./tips-to-remember-periodic-table.html">Tips to Remember Periodic Table</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="playDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./img/nav/play-emoji.png" class="emoji" />Play
+              <span class="sr-only">(current)</span></a
             >
-          </li>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              
+            </div>
+          </div>
           <button
             type="button"
             id="Join-In-Trigger-Button"
-            class="btn btn-outline-info mx-1 font-weight-bold"
+            class="btn m-2 font-weight-bold"
             data-toggle="modal"
             data-target="#exampleModalCenter"
           >
@@ -80,7 +94,9 @@
               class="dropdown-menu dropdown-menu-right"
               aria-labelledby="dropdownMenu2"
             >
-              <button class="dropdown-item" type="button">My Account</button>
+              <a class="dropdown-item" type="button" href="./account.html"
+                >My Account</a
+              >
               <button
                 class="dropdown-item"
                 type="button"
