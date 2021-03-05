@@ -64,7 +64,15 @@ const commanFunctionForButtonClick = (isAnswer = true) => {
     if (!isAnswer && el === PeriodicGameState.answerElement) {
       sqaureBoxHTML += `<div class="squareElement bg-danger">
     <p class="atomic-symbol">?</p>
-
+  </div>`;
+    } else if (isAnswer && el === PeriodicGameState.answerElement) {
+      sqaureBoxHTML += `<div class="squareElement bg-success">
+    <p class="element-name">${obj.name}</p>
+    <p class="atomic-no">${obj.atomicnumber}</p>
+    <p class="atomic-symbol">${el}</p>
+    <p class="atomic-weight">
+      ${obj.atomicweight}
+    </p>
   </div>`;
     } else {
       sqaureBoxHTML += `<div class="squareElement">
