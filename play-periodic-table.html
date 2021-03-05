@@ -91,12 +91,12 @@
     </div>
 
     <div class="row p-0 m-0">
-      <div class="quiz-container m-auto" id="quiz">
+      <div class="quiz-container shadow m-auto" id="quiz">
         <div class="quiz-header">
           <h2 id="question">This is some Question Text</h2>
           <ul>
             <form id="quiz-form">
-              <li>
+              <li class="a_li">
                 <input
                   type="radio"
                   id="a"
@@ -106,7 +106,7 @@
                 />
                 <label id="a_text" for="a">cl - chlorine</label>
               </li>
-              <li>
+              <li class="b_li">
                 <input
                   type="radio"
                   id="b"
@@ -116,7 +116,7 @@
                 />
                 <label id="b_text" for="b">f - floreing</label>
               </li>
-              <li>
+              <li class="c_li">
                 <input
                   type="radio"
                   id="c"
@@ -126,7 +126,7 @@
                 />
                 <label id="c_text" for="c">i - iodine</label>
               </li>
-              <li>
+              <li class="d_li">
                 <input
                   type="radio"
                   id="d"
@@ -140,6 +140,7 @@
           </ul>
         </div>
         <button id="submit">Check the Answer</button>
+        <button id="clear" class="btn btn-danger my-0">Clear the Choice</button>
       </div>
     </div>
 
@@ -149,7 +150,7 @@
       >
         <div>
           <button class="btn lgx-btn" id="CheckTheBalanceBtn">
-            Check the Balance
+            Answer Explanation
           </button>
           <button
             class="btn lgx-btn bg-info p-0"
@@ -403,5 +404,6 @@
     <script src="./js/periodic-table/data.js"></script>
     <script src="./js/play-periodic-table/atomic_data.js"></script>
     <script src="./js/play-periodic-table/loadQuestion.js"></script>
+    <script src="./js/play-periodic-table/option-handlers.js"></script>
   </body>
 </html>

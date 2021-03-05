@@ -35,10 +35,9 @@
 .quiz-container ul li label {
   cursor: pointer;
 }
-.quiz-container button {
+.quiz-container button#submit {
   background-color: #1e90ff;
-  display: block;
-  width: 100%;
+  width: 65%;
   font-family: inherit;
   border: none;
   font-size: 1.1rem;
@@ -46,19 +45,29 @@
   color: #fff;
   cursor: pointer;
 }
+.quiz-container button#clear {
+  width: 34%;
+  font-family: inherit;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  vertical-align: baseline;
+}
 
-.quiz-container button:hover {
+.quiz-container button#submit:hover {
   background-color: #1460ac;
 }
 
-.quiz-container button:focus {
+.quiz-container button#submit:focus {
   outline: none;
   background-color: #1460ac;
 }
 
 .quiz-container {
-  border: 2px solid #1460ac;
-  border-radius: 10px;
+  border: 5px solid #63d297;
+  border-radius: 20px;
 }
 
 #a,
@@ -71,6 +80,9 @@ li label {
 .quiz-header ul li {
   padding: 5px;
   border-radius: 10px;
+}
+.quiz-header ul li {
+  border: 2px solid transparent;
 }
 .quiz-header ul li:hover {
   background: #63d29734;
@@ -89,4 +101,54 @@ li label {
 }
 
 .quiz-container ul li {
+}
+
+.selected-option {
+  background-color: skyblue;
+}
+
+.correct-option {
+  background-color: greenyellow;
+}
+
+.wrong-option {
+  background-color: rgba(255, 0, 0, 0.514);
+}
+.shadow {
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Shake on Right or Wrong Answer */
+.face:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

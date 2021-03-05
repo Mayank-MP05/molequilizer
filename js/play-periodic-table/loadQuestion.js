@@ -22,19 +22,6 @@ const PeriodicGameState = {
   selctedAns: 0,
 };
 
-// $(".answer").on("click", (e) => {
-//   console.log(e.target.name);
-// });
-
-// //On radio button click event handlers
-// $(".answer").on("click", (e) => {
-//   $("#a").prop("checked", true);
-// });
-
-$("#quiz-form input").on("change", function () {
-  alert($("input[name='answer']:checked", "#quiz-form").val());
-});
-
 const GetNewQuestion = () => {
   console.log("UI Updator Called...");
   PeriodicGameState.quizArr = quizesDB[0];
@@ -116,10 +103,6 @@ const UIupdator = () => {
       $("#d_text").html(`${el.symbol} - ${el.name}`);
     }
   });
-  //   $("#a_text").html(PeriodicGameState.optionA);
-  //   $("#b_text").html(PeriodicGameState.optionB);
-  //   $("#c_text").html(PeriodicGameState.optionC);
-  //   $("#d_text").html(PeriodicGameState.optionD);
 };
 
 GetNewQuestion();
