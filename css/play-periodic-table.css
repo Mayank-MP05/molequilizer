@@ -75,7 +75,7 @@
 #c,
 #d,
 li label {
-  font-size: 25px;
+  font-size: 20px;
 }
 .quiz-header ul li {
   padding: 5px;
@@ -124,6 +124,36 @@ li label {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* Show Sqaure Elements */
+.squareElement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: #63d29785;
+}
+
+.squareElement p {
+  padding: 0;
+  margin: 0;
+}
+
+.atomic-symbol {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.periodic-container {
+  background-color: black;
+  border-radius: 10px;
+  display: flex;
+}
+
+.modal-dialog.atoms-rendering-here {
+  min-width: 80%;
+}
 /* Shake on Right or Wrong Answer */
 .face:hover {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;

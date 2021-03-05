@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/comman.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/playground.css" />
+    <link rel="stylesheet" href="./css/bohr-model.css">
     <link rel="stylesheet" href="./css/play-periodic-table.css" />
   </head>
   <body>
@@ -164,100 +165,22 @@
         class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
       >
         <div>
-          <button class="btn lgx-btn" id="CheckTheBalanceBtn">
+          <button class="btn lgx-btn" id="AnswerExplanationBtn">
             Answer Explanation
           </button>
           <button
-            class="btn lgx-btn bg-info p-0"
+            class="btn lgx-btn bg-info py-0"
             data-toggle="modal"
             data-target="#exampleModal2"
+            id="hintTriggerBtn"
           >
-            <img src="./img/learn/idea.png" width="55" />
+            <img src="./img/learn/idea.png" width="55" />Hints
           </button>
         </div>
       </div>
     </div>
-    <!-- Chemical Reaction Balancer modal starts here -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <img
-        src="./img/playground/chemical_reaction_animation.gif"
-        class="reactionLoading"
-        id="reactionLoading"
-        alt=""
-      />
-      <div class="modal-dialog d-none" id="resultDialogue" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Chemical Reaction Results
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div
-            class="modal-body"
-            id="modelBorderFrame"
-            style="border: 3px solid greenyellow"
-          >
-            <div
-              class="alert"
-              role="alert"
-              colspan="4"
-              id="ReactionStatusAlert"
-            >
-              Reaction is Balanced
-            </div>
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Element</th>
-                  <th scope="col">LHS Count</th>
-                  <th scope="col">RHS Count</th>
-                </tr>
-              </thead>
-              <tbody id="reactionElementCountTable">
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Fe</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Cl</td>
-                  <td>6</td>
-                  <td>6</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Chemical Reaction Balancer modal Ends here -->
 
-    <!-- Modal 2 - Hint Modal start here -->
+    <!-- Modal - Hint Modal start here -->
     <div
       class="modal fade"
       id="exampleModal2"
@@ -266,12 +189,11 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog atoms-rendering-here" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              <img src="img/learn/idea.png" width="40" />Chemical Reaction
-              Balancing Hints
+              <img src="img/learn/idea.png" width="40" />
             </h5>
             <button
               type="button"
@@ -281,16 +203,25 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p class="font-weight-bold">The Law of Conservation of Mass</p>
-            <p>
-              The Law of Conservation of Mass dates from Antoine Lavoisier's
-              1789 discovery that mass is neither created nor destroyed in
-              chemical reactions. In other words, the mass of any one element at
-              the beginning of a reaction will equal the mass of that element at
-              the end of the reaction. If we account for all reactants and
-              products in a chemical reaction, the total mass will be the same
-              at any point in time in any closed system.
-            </p>
+            <p class="font-weight-bold">Chemical Configurations of Elements</p>
+            <div id='periodic-container' class="periodic-container"></div>
+
+            <div class="flex">
+
+            </div>
+            <h5 class="hindiHint"><span class="badge badge-success">Hindi Hint : </span>{Content of the Hindi Slang}</h5>
+            <h5 class="englishHint"><span class="badge badge-primary">English Hint : </span>{Content of the Hindi Slang}</h5>
+            <p>Show all Elements in Sqaure here</p>
+            <div class="flex squareElementDiv">
+              <div class="squareElement">
+                <p class="element-name">Element Name</p>
+                <p class="atomic-no">56</p>
+                <p class="atomic-symbol">Cl</p>
+                <p class="atomic-weight">
+                  453
+                </p>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button
@@ -420,5 +351,9 @@
     <script src="./js/play-periodic-table/atomic_data.js"></script>
     <script src="./js/play-periodic-table/loadQuestion.js"></script>
     <script src="./js/play-periodic-table/option-handlers.js"></script>
+    <script src="./js/play-periodic-table/ans-hint-modal.js"></script>
+
+    <script src="./js/play-periodic-table/atomicBohrModel.min.js"></script>
+    <script src="./js/play-periodic-table/render-bohr-model.js"></script>
   </body>
 </html>

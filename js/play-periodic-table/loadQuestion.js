@@ -12,6 +12,7 @@ $("#question");
 
 const PeriodicGameState = {
   quizArr: [],
+  atomicNoArr: [10, 20, 30, 12],
   question: "",
   optionA: "",
   optionB: "",
@@ -20,6 +21,10 @@ const PeriodicGameState = {
   answerElement: "",
   correctAns: 0,
   selctedAns: 0,
+  hindiHint: "",
+  englishHint: "",
+  period: "",
+  group: "",
 };
 
 const GetNewQuestion = () => {
