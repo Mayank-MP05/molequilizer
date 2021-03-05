@@ -101,6 +101,8 @@ li label {
 }
 
 .quiz-container ul li {
+  padding: 0%;
+  margin: 00;
 }
 
 .selected-option {
