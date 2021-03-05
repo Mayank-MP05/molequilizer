@@ -68,3 +68,11 @@
 li label {
   font-size: 25px;
 }
+.quiz-header ul li {
+  padding: 5px;
+  border-radius: 10px;
+}
+.quiz-header ul li:hover {
+  background: #63d29734;
+  border: 2px solid #63d297;
+}
