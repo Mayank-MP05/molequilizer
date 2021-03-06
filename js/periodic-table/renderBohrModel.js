@@ -1,9 +1,8 @@
-
-const bohrModelUpdator = () => {
+const bohrModelUpdator = (atomicNo = 1, destroy = false) => {
   var atomConfig = {
     //All atoms share this base-config
-    nucleusRadius: 20,
-    electronRadius: 2,
+    nucleusRadius: 25,
+    electronRadius: 3,
     symbolOffset: 7,
     animationTime: 600,
     orbitalColor: "rgba(24, 255, 255, 0.3)",
@@ -42,7 +41,7 @@ const bohrModelUpdator = () => {
     navigator.userAgent
   );
 
-  let arr = PeriodicGameState.atomicNoArr;
+  let arr = [atomicNo];
 
   if (!isMobile) {
     $("#periodic-container").html("");
@@ -51,7 +50,7 @@ const bohrModelUpdator = () => {
       (function (i) {
         setTimeout(function () {
           $("#periodic-container").append(
-            `<div class=\'col-md-2 element-container\' id='bohr-container-${i}'></div>`
+            `<div class=\'col-md-12 element-container\' id='bohr-container-${i}'></div>`
           );
           atomConfig.numElectrons = arr[i - 1];
           atomConfig.idNumber = i;
@@ -153,7 +152,8 @@ const bohrModelUpdator = () => {
       }, 1500);
     });
   }
+  if (destroy) {
+    myAtoms.forEach((el) => el.destroy());
+    // newAtom.destroy();
+  }
 };
-
-bohrModelUpdator();
-

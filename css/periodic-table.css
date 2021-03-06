@@ -327,3 +327,19 @@ input[type="radio"] {
 .pblock {
   background-color: #fdff8c;
 }
+
+.w-100.periodic-container {
+  min-height: 40%;
+  background-color: black;
+}
+.bohr-svg-container {
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  vertical-align: text-top;
+  overflow: hidden;
+  top: 0;
+}

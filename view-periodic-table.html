@@ -9,6 +9,7 @@
       type="image/x-icon"
       href="/img/moliquilizer-logo-favicon.ico"
     />
+    <link rel="stylesheet" href="./css/bohr-model.css">
     <link rel="stylesheet" href="./css/comman.css" />
     <link rel="stylesheet" href="./css/periodic-table.css">
     <link rel="stylesheet" href="./css/bootstrap.css" />
@@ -203,8 +204,28 @@
       <div id="infobox"
        class="border roundcorners"
       style="position:absolute;  width: 80%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFFFFF; visibility: hidden;">
-    
-        <table style="width:100%;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="elementDetailsModalLabel">
+
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>  
+        <div class="modal-body">
+          <div class="row p-0">
+      <div class="col" style="width:50%;float:left">
+        
+          <div><div class="w-100 periodic-container" id="periodic-container">
+            Loading ...
+          </div></div>
+          <div id="ElectronicConfig"></div>
+          <div id="ECSemantics"></div>
+        </div>
+        <table style="width:50%;float:right">
             <tr><th colspan="2" id="infoName" class="thelementname"></th></tr>
             <tr><th>Atomic number</th><td id="infoAtomicNumber"></th></tr>
               <tr><th>Chemical Symbol</th><td id="infoChemicalSymbol"></td></tr>
@@ -216,9 +237,28 @@
               <tr><th>Group</th><td id="infoGroup"></td></tr>
               <tr><th>Period</th><td id="infoPeriod"></td></tr>
               <tr><th>Block</th><td id="infoBlock"></td></tr>
-              <tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Close</div></td></tr>
-        </table>
-    
+              <!-- <tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Close</div></td></tr> -->
+        </table></div>
+        <p class="p-2" id="BriefSummary">{Summary of the element heree}</p>
+        </div>
+        <div class="modal-footer">
+          <a
+          type="button"
+          class="btn btn-info"
+          target="blank"
+          id="readMoreLink"
+        >
+          Read More ...
+        </a>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            id="btnCloseInfoBox"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
     </div>
@@ -332,7 +372,12 @@
     <script src="./js/firebase/auth-ui-controllers.js"></script>
     <script src="./js/firebase/auth.js"></script>
 
+    <script src="./js/play-periodic-table/atomicBohrModel.min.js"></script>
+    <script src="./js/periodic-table/renderBohrModel.js"></script>
+
     <script src="./js/periodic-table/data.js"></script>
+    <script src="./js/periodic-table/extraDB.js"></script>
+
     <script src="./js/periodic-table/periodictable.js"></script>
     <script src="./js/periodic-table/periodictableinfobox.js"></script>
     <script src="./js/periodic-table/periodictabledisplay.js"></script>
