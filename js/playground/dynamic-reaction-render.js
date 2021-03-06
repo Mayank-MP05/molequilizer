@@ -279,4 +279,4 @@ const setReaction = (index) => {
   UIupdater();
   closeNav();
 };
-console.log(moleculeObj);
+
