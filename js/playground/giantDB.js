@@ -1,6 +1,6 @@
 let GiantDB = [
   {
-    REACTION_LABEL: "<h2>hi chemical reaction here ... <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: false,
@@ -88,8 +88,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: false,
@@ -188,8 +187,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 3,
     isR2There: true,
     isP2There: true,
@@ -379,8 +377,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: true,
@@ -537,8 +534,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: true,
@@ -650,8 +646,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -786,8 +781,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -955,8 +949,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 3,
     isR2There: true,
     isP2There: true,
@@ -1212,8 +1205,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: true,
@@ -1464,8 +1456,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: false,
@@ -1519,8 +1510,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: false,
@@ -1619,8 +1609,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -1732,8 +1721,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -1956,8 +1944,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 3,
     isR2There: true,
     isP2There: true,
@@ -2114,8 +2101,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -2256,8 +2242,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: true,
@@ -2391,8 +2376,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -2593,8 +2577,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 3,
     isR2There: true,
     isP2There: true,
@@ -2751,8 +2734,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 2,
     isR2There: true,
     isP2There: true,
@@ -2853,8 +2835,7 @@ let GiantDB = [
     },
   },
   {
-    REACTION_LABEL:
-      "<h2>hi chemical reaction here ...FE2 o 3  <sub>2</sub></h2>",
+    REACTION_LABEL: "Local Cached Reaction",
     DIFFICULTY: 1,
     isR2There: true,
     isP2There: true,

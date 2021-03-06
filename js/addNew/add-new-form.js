@@ -58,22 +58,46 @@ const ResetBtnFn = () => {
   $("#isR2There").prop("checked", true);
   $("#isP2There").prop("checked", true);
 
-  $("#r1_JSON").html(`{
-    nodes:[],
-    links:[]
+  $("#r1_JSON").val(`{
+    "nodes":[],
+    "links":[]
 }`);
-  $("#r2_JSON").html(`{
-  nodes:[],
-  links:[]
+  $("#r2_JSON").val(`{
+  "nodes":[],
+  "links":[]
 }`);
-  $("#p1_JSON").html(`{
-  nodes:[],
-  links:[]
+  $("#p1_JSON").val(`{
+  "nodes":[],
+  "links":[]
 }`);
-  $("#p2_JSON").html(`{
-  nodes:[],
-  links:[]
+  $("#p2_JSON").val(`{
+  "nodes":[],
+  "links":[]
 }`);
 };
 
 $("#ResetBtn").on("click", ResetBtnFn);
+
+const AddReactionFn = () => {
+  reactionObj = {
+    REACTION_LABEL: "Reaction From Firebase",
+    DIFFICULTY: Number($("#DIFFICULTY").val()),
+    isR2There: $("#isR2There").is(":checked"),
+    isP2There: $("#isP2There").is(":checked"),
+    r1_label: $("#r1_label").val(),
+    r2_label: $("#r2_label").val(),
+    p1_label: $("#p1_label").val(),
+    p2_label: $("#p2_label").val(),
+    r1_mol: JSON.parse($("#r1_JSON").val()),
+    r2_mol: JSON.parse($("#r2_JSON").val()),
+    p1_mol: JSON.parse($("#p1_JSON").val()),
+    p2_mol: JSON.parse($("#p2_JSON").val()),
+  };
+  console.log(reactionObj);
+  push_to_DB(
+    reactionObj,
+    () => {},
+    () => {}
+  );
+};
+$("#AddReactionBtn").on("click", AddReactionFn);
