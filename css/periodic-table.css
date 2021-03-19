@@ -59,7 +59,7 @@
   height: 42px;
   line-height: 42px;
 }
-
+/* 
 A:link {
   text-decoration: none;
   color: #ffffff;
@@ -83,7 +83,7 @@ A:hover {
   color: #ffffff;
   outline: none;
   border: 0;
-}
+} */
 
 .button {
   cursor: pointer;
