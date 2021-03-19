@@ -1,0 +1,68 @@
+.one,
+.two,
+.three,
+.four,
+.five,
+.zero,
+.six {
+  position: absolute;
+  margin-top: -10px;
+  z-index: 1;
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+}
+.zero {
+  left: 0;
+}
+.one {
+  left: 16.6%;
+}
+.two {
+  left: 33.2%;
+}
+.three {
+  left: 49.8%;
+}
+.four {
+  left: 66.4%;
+}
+.five {
+  left: 83%;
+}
+.six {
+  left: 100%;
+}
+.primary-color {
+  background-color: #4989bd;
+}
+.success-color {
+  background-color: #5cb85c;
+}
+.danger-color {
+  background-color: #d9534f;
+}
+.warning-color {
+  background-color: #f0ad4e;
+}
+.info-color {
+  background-color: #5bc0de;
+}
+.no-color {
+  background-color: inherit;
+}
+
+.testTubeImg {
+  width: 250px;
+  height: 250px;
+}
+
+.progress-card {
+  border: 5px solid #5cb85c;
+  border-radius: 20px;
+}
+
+.loading {
+  width: 400px;
+  margin: auto;
+}

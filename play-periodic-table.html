@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play balancing the Chemical Reaction game | Team Molequilizer</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/moliquilizer-logo-favicon.ico"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/checkbox.css" />
+    <link rel="stylesheet" href="./css/playground.css" />
+    <link rel="stylesheet" href="./css/bohr-model.css">
+    <link rel="stylesheet" href="./css/play-periodic-table.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/congratulations.css">
+ 
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
+      <img src="./img/nav/Moleq Nav Logo.png" class="nav-icon-logo" /><button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="learnDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./img/nav/learn-emoji.png" class="emoji" />Learn
+              <span class="sr-only">(current)</span></a
+            >
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="learnDropdownMenuButton">
+              <a class="dropdown-item" href="./types-of-reactions.html">Types of Chemical Reaction</a>
+              <a class="dropdown-item" href="./learn-balancing-the-chemical-reaction.html">Balancing the Chemical Reaction</a>
+              <a class="dropdown-item" href="./view-periodic-table.html">View Periodic Table</a>
+              <a class="dropdown-item" href="./tips-to-remember-periodic-table.html">Tips to Remember Periodic Table</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="playDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./img/nav/play-emoji.png" class="emoji" />Play
+              <span class="sr-only">(current)</span></a
+            >
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              
+            </div>
+          </div>
+          <button
+            type="button"
+            id="Join-In-Trigger-Button"
+            class="btn m-2 font-weight-bold"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            Join In
+          </button>
+          <div class="dropdown" id="logged-In-Dropdown-Trigger-Btn">
+            <button
+              class="btn p-0 dropdown-toggle"
+              style="background: #f8f9fa"
+              type="button"
+              id="dropdownMenu2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                id="UserImg"
+                src="./img/users/user (1).png"
+                class="avatar-img"
+              />
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownMenu2"
+            >
+              <a class="dropdown-item" type="button" href="./account.html"
+                >My Account</a
+              >
+              <button
+                class="dropdown-item"
+                type="button"
+                id="logout-trigger-btn"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row p-0 m-0">
+      <button class="btn btn-success my-2 ml-auto new-reaction-btn">New Reaction</button>
+    </div>
+
+    <div class="row p-0 m-0">
+      <div class="quiz-container shadow m-auto" id="quiz">
+        <div class="quiz-header">
+          <h2 id="question">This is some Question Text</h2>
+          <hr class="bg-green">
+          <ul>
+            <form id="quiz-form">
+              <li class="a_li">
+                <input
+                  type="radio"
+                  id="a"
+                  name="answer"
+                  class="answer"
+                  value="a"
+                />
+                <label id="a_text" for="a">cl - chlorine</label>
+              </li>
+              <li class="b_li">
+                <input
+                  type="radio"
+                  id="b"
+                  name="answer"
+                  class="answer"
+                  value="b"
+                />
+                <label id="b_text" for="b">f - floreing</label>
+              </li>
+              <li class="c_li">
+                <input
+                  type="radio"
+                  id="c"
+                  name="answer"
+                  class="answer"
+                  value="c"
+                />
+                <label id="c_text" for="c">i - iodine</label>
+              </li>
+              <li class="d_li">
+                <input
+                  type="radio"
+                  id="d"
+                  name="answer"
+                  class="answer"
+                  value="d"
+                />
+                <label id="d_text" for="d">br - bromide</label>
+              </li>
+            </form>
+          </ul>
+        </div>
+        <button id="submit">Check the Answer</button>
+        <button id="clear" class="btn btn-danger my-0">Clear the Choice</button>
+      </div>
+    </div>
+
+    <div class="p-0 m-0 sticky-bottom">
+      <div
+        class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
+      >
+        <div>
+          <button class="btn lgx-btn" id="AnswerExplanationBtn">
+            Answer Explanation
+          </button>
+          <button
+            class="btn lgx-btn bg-info py-0"
+            id="hintTriggerBtn"
+          >
+            <img src="./img/learn/idea.png" width="55" />Hints
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal - Hint Modal start here -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog atoms-rendering-here" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <img src="img/learn/idea.png" width="40" />
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="font-weight-bold">Chemical Configurations of Elements</p>
+            <div id='periodic-container' class="periodic-container"></div>
+
+            <div class="flex">
+
+            </div>
+            <h5 class="hindiHint"><span class="badge badge-success">Hindi Hint : </span>{Content of the Hindi Slang}</h5>
+            <h5 class="englishHint"><span class="badge badge-primary">English Hint : </span>{Content of the Hindi Slang}</h5>
+           
+            <div class="d-flex squareElementDiv justify-content-center align-items-center">
+              <div class="squareElement">
+                <p class="element-name">Element Name</p>
+                <p class="atomic-no">56</p>
+                <p class="atomic-symbol">Cl</p>
+                <p class="atomic-weight">
+                  453
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hint modal ends here -->
+
+    <!-- Login Modal Start here -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <div
+                class="alert alert-danger"
+                id="errorAlert"
+                role="alert"
+              ></div>
+              <div
+                class="alert alert-success"
+                role="alert"
+                id="AccountCreationAlert"
+              >
+                Account Creation Successful!
+              </div>
+              <div class="alert alert-success" role="alert" id="LoginAlert">
+                Logging you in...
+              </div>
+              <h5 class="card-title text-center">Join In</h5>
+
+              <div class="form-signin">
+                <div class="form-label-group">
+                  <input
+                    type="email"
+                    id="inputEmail"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                    autofocus
+                  />
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input
+                    type="password"
+                    id="inputPassword"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <button
+                  id="sign-in-button"
+                  class="btn btn-lg btn-primary btn-block text-uppercase"
+                  type="submit"
+                >
+                  Sign in
+                </button>
+                <hr class="my-4" />
+                <button
+                  class="btn btn-lg btn-google btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-google mr-2"></i> Sign in with Google
+                </button>
+                <button
+                  class="btn btn-lg btn-facebook btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal end here -->
+    <div class="congrats" style="z-index: 1051;">
+      <h1 class="text-green" style="color: #63d297;">Congratulations!</h1>
+  </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"
+      integrity="sha512-ilnmzGTqmx3gXTbd1eLUf6LTgAFEULf1d1Pf18LR3o+IQjt1j+rtlOHX1upJUSdWlganBwNe0E7U4U5iWH+uYw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script src="./js/firebase/init.js"></script>
+    <script src="./js/firebase/auth-ui-controllers.js"></script>
+    <script src="./js/firebase/auth.js"></script>
+
+    <script src="./js/play-periodic-table/quizesDB.js"></script>
+    <script src="./js/periodic-table/data.js"></script>
+    <script src="./js/play-periodic-table/atomic_data.js"></script>
+    <script src="./js/play-periodic-table/loadQuestion.js"></script>
+    <script src="./js/play-periodic-table/option-handlers.js"></script>
+    <script src="./js/play-periodic-table/ans-hint-modal.js"></script>
+
+    <script src="./js/play-periodic-table/atomicBohrModel.min.js"></script>
+    <script src="./js/play-periodic-table/render-bohr-model.js"></script>
+
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <script src="./js/periodic-table/congratulations-effect.js"></script>
+  </body>
+</html>

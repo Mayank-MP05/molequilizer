@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add the New Chemical Reaction | Team Molequilizer</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/moliquilizer-logo-favicon.ico"
+    />
+    <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/learn.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/checkbox.css" />
+    <link rel="stylesheet" href="./css/modal-form.css" />
+    <link rel="stylesheet" href="./css/add-new-reaction.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
+      <img src="./img/nav/Moleq Nav Logo.png" class="nav-icon-logo" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="learnDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./img/nav/learn-emoji.png" class="emoji" />Learn
+              <span class="sr-only">(current)</span></a
+            >
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="learnDropdownMenuButton">
+              <a class="dropdown-item" href="./types-of-reactions.html">Types of Chemical Reaction</a>
+              <a class="dropdown-item" href="./learn-balancing-the-chemical-reaction.html">Balancing the Chemical Reaction</a>
+              <a class="dropdown-item" href="./view-periodic-table.html">View Periodic Table</a>
+              <a class="dropdown-item" href="./tips-to-remember-periodic-table.html">Tips to Remember Periodic Table</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle m-2" type="button" id="playDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./img/nav/play-emoji.png" class="emoji" />Play
+              <span class="sr-only">(current)</span></a
+            >
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              
+            </div>
+          </div>
+          <button
+            type="button"
+            id="Join-In-Trigger-Button"
+            class="btn m-2 font-weight-bold"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            Join In
+          </button>
+          <div class="dropdown" id="logged-In-Dropdown-Trigger-Btn">
+            <button
+              class="btn p-0 dropdown-toggle"
+              style="background: #f8f9fa"
+              type="button"
+              id="dropdownMenu2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                id="UserImg"
+                src="./img/users/user (1).png"
+                class="avatar-img"
+              />
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownMenu2"
+            >
+              <a class="dropdown-item" type="button" href="./account.html"
+                >My Account</a
+              >
+              <button
+                class="dropdown-item"
+                type="button"
+                id="logout-trigger-btn"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-3" style="border: 2px solid gray;border-radius: 10px;">
+      <h3>
+        Add New Reaction
+      </h3>
+      <hr>
+      <label class="customcheck" id="checkBoxLabel"
+      >Second Reactant Present in Reaction ?
+      <input type="checkbox" checked="checked" name="isR2There" id="isR2There" onchange="handleChange"/>
+      <span class="checkmark"></span>
+      </label>
+
+      <label class="customcheck" id="checkBoxLabel"
+      >Second Product Present in Reaction ?
+      <input type="checkbox" checked="checked" name="isP2There" id="isP2There" onchange="handleChange"/>
+      <span class="checkmark"></span>
+      </label>
+
+      <select class="custom-select" id="DIFFICULTY" name="DIFFICULTY" onchange="handleChange">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+
+      <div class="input-group m-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Reactant Labels</span>
+        </div>
+        <input type="text" name="r1_label" id="r1_label" onchange="handleChange()" aria-label="First name" class="form-control">
+        <input type="text" name="r2_label" id="r2_label" onchange="handleChange" aria-label="Last name" class="form-control">
+      </div>
+
+      <div class="input-group m-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Product Labels</span>
+        </div>
+        <input type="text" name="p1_label" id="p1_label" onchange="handleChange" aria-label="First name" class="form-control">
+        <input type="text" name="p2_label" id="p2_label" onchange="handleChange" aria-label="Last name" class="form-control">
+      </div>
+      <hr>
+      <p class="font-weight-bold r1_struct">Reactant One Molecular Structure</p>
+      <textarea name="r1_JSON" id="r1_JSON" class="r1_struct w-100" rows="5">
+{
+  "nodes":[],
+  "links":[]
+}
+      </textarea>      
+      
+      <p class="font-weight-bold r2_struct">Reactant Two Molecular Structure</p>
+      <textarea name="r1_JSON" id="r2_JSON" class="r2_struct w-100" rows="5">
+{
+  "nodes":[],
+  "links":[]
+}
+      </textarea>    
+      
+      <p class="font-weight-bold p1_struct">Product One Molecular Structure</p>
+      <textarea name="r1_JSON" id="p1_JSON" class="p1_struct w-100" rows="5">
+{
+  "nodes":[],
+  "links":[]
+}
+      </textarea>      
+      
+      <p class="font-weight-bold p2_struct">Product Two Molecular Structure</p>
+      <textarea name="r1_JSON" id="p2_JSON" class="p2_struct w-100" rows="5">
+{
+  "nodes":[],
+  "links":[]
+}
+      </textarea>
+
+      <div class="row text-center justify-content-center">
+        <button class="btn btn-danger m-1" id="ResetBtn">Reset</button>
+        <button class="btn btn-success m-1" id="AddReactionBtn">
+          Add Reaction
+        </button>
+      </div>
+    </div>
+
+    <!-- Login Modal Start here -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <div
+                class="alert alert-danger"
+                id="errorAlert"
+                role="alert"
+              ></div>
+              <div
+                class="alert alert-success"
+                role="alert"
+                id="AccountCreationAlert"
+              >
+                Account Creation Successful!
+              </div>
+              <div class="alert alert-success" role="alert" id="LoginAlert">
+                Logging you in...
+              </div>
+              <h5 class="card-title text-center">Join In</h5>
+
+              <div class="form-signin">
+                <div class="form-label-group">
+                  <input
+                    type="email"
+                    id="inputEmail"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                    autofocus
+                  />
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input
+                    type="password"
+                    id="inputPassword"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <button
+                  id="sign-in-button"
+                  class="btn btn-lg btn-primary btn-block text-uppercase"
+                  type="submit"
+                >
+                  Sign in
+                </button>
+                <hr class="my-4" />
+                <button
+                  class="btn btn-lg btn-google btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-google mr-2"></i> Sign in with Google
+                </button>
+                <button
+                  class="btn btn-lg btn-facebook btn-block text-uppercase"
+                  type="submit"
+                >
+                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal end here -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script src="./js/firebase/init.js"></script>
+    <script src="./js/firebase/auth-ui-controllers.js"></script>
+    <script src="./js/firebase/auth.js"></script>
+
+    <script src="./js/addNew/push-to-firebase.js"></script>
+    <script src="./js/addNew/add-new-form.js"></script>
+  
+  </body>
+</html>

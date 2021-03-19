@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .row.sticky-bottom {
   position: fixed;
   left: 0;
@@ -13,8 +16,7 @@
 /* Green Button */
 .lgx-btn,
 .lgx-submit,
-.wpcf7-submit,
-button {
+.wpcf7-submit {
   overflow: hidden;
   border: none;
   text-align: center;
@@ -26,7 +28,7 @@ button {
   font-weight: 400;
   font-size: 14px;
   margin: 0 auto;
-  padding: 1.5rem 4rem;
+  padding: 1.1rem 4rem;
   display: inline-block;
   letter-spacing: 0.1rem;
   background: #554bb9;
@@ -41,8 +43,7 @@ button {
 
 .lgx-btn:hover,
 .lgx-submit:hover,
-.wpcf7-submit:hover,
-button:hover {
+.wpcf7-submit:hover {
   color: #fff;
   border-radius: 16px;
   -moz-transition-duration: 0.3s;
@@ -50,4 +51,112 @@ button:hover {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* .bottom-card {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px;
+} */
+
+/* Left Sidebar CSS */
+.sidenav {
+  background-color: #111;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
+  z-index: 1;
+}
+.sidenavR {
+  background-color: #111;
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 60px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
+  z-index: 1;
+}
+.sidenav a,
+.sidenavR a {
+  color: #818181;
+  display: block;
+  font-size: 25px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidenav a:hover,
+.offcanvas a:focus,
+.sidenavR a:hover,
+.offcanvas a:focus {
+  color: #f1f1f1;
+}
+.sidenav .closebtn,
+.sidenavR .closebtn {
+  font-size: 36px;
+  margin-left: 50px;
+  /* position: absolute; */
+  /* right: 25px; */
+  top: 0;
+}
+@media (max-height: 450px) {
+  .sidenav,
+  .sidenavR {
+    padding-top: 15px;
+  }
+  .sidenav a,
+  .sidenavR a {
+    font-size: 18px;
+  }
+}
+
+/* Playground "Reactant" and "Product" */
+#rmol > svg,
+#pmol > svg {
+  border: 10px solid #63d297;
+}
+
+#floatingLabel {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  z-index: 900;
+  background-color: green;
+  padding: 5px;
+  color: white;
+}
+
+.reactionBtn:hover {
+  background-color: #63d29775;
+}
+
+.practice-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  float: left;
+}
+
+.reactionLoading {
+  width: 40%;
+  margin-top: 10%;
+  margin-left: 35%;
+}
+
+.reactionSpan {
+  float: right;
+  margin: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }

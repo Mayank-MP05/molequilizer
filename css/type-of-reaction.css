@@ -1,0 +1,14 @@
+.type-of-reaction-table {
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.type-of-reaction-table tr,
+.type-of-reaction-table td {
+  border: 2px solid gray;
+}
+
+.type-of-reaction-table th {
+  border: 2px solid gray;
+}
