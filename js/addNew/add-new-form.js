@@ -88,26 +88,10 @@ const AddReactionFn = () => {
     r2_label: $("#r2_label").val(),
     p1_label: $("#p1_label").val(),
     p2_label: $("#p2_label").val(),
-    r1_mol: JSON.parse(
-      JSON.stringify($("#r1_JSON").val())
-        .replace(/(?:\\[rn])+/g, "")
-        .replace(/\s+/g, "")
-    ),
-    r2_mol: JSON.parse(
-      JSON.stringify($("#r2_JSON").val())
-        .replace(/(?:\\[rn])+/g, "")
-        .replace(/\s+/g, "")
-    ),
-    p1_mol: JSON.parse(
-      JSON.stringify($("#p1_JSON").val())
-        .replace(/(?:\\[rn])+/g, "")
-        .replace(/\s+/g, "")
-    ),
-    p2_mol: JSON.parse(
-      JSON.stringify($("#p2_JSON").val())
-        .replace(/(?:\\[rn])+/g, "")
-        .replace(/\s+/g, "")
-    ),
+    r1_mol: eval(`(${$("#r1_JSON").val()})`),
+    r2_mol: eval(`(${$("#r2_JSON").val()})`),
+    p1_mol: eval(`(${$("#p1_JSON").val()})`),
+    p2_mol: eval(`(${$("#p2_JSON").val()})`),
   };
   console.log(reactionObj);
   push_to_DB(
