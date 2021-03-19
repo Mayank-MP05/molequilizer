@@ -65,6 +65,9 @@ firebase.auth().onAuthStateChanged(function (user) {
           if (el) c++;
           else break;
         }
+        if (c == learnPageState.completedArr.length) {
+          c--;
+        }
         $("#currLesson").html(
           `<span class="badge badge-success">Current Lesson</span> : ${
             VideosData[c - 1].title
