@@ -165,4 +165,27 @@ let quizesDB = [
               ><strong>t</strong><em>h</em>&nbsp;<strong><em>D</em></strong
               ><em>ifficult&nbsp;</em><strong>S</strong><em>ums</em>`,
   },
+{
+    quizData: ["O", "S", "Se", "Te", "Po"],
+    hindiHint: `Oh<em>,</em>&nbsp;<strong>S</strong>eema<em>&nbsp;</em
+    ><strong>Se</strong>nt<em>&nbsp;</em><strong>T</strong>h<strong
+      >e</strong
+    ><em>&nbsp;</em><strong>Po</strong>st`,
+    englishHint: `              
+    <strong>O</strong>ye <strong>S</strong>un
+    <strong>S</strong>ax<strong>e</strong>na <strong>Te</strong>ri
+    <strong>Po</strong>l Kholu`,
+  },
+  {
+    quizData: ["F", "Cl", "Br", "I", "At"],
+    hindiHint: `<strong>F</strong>altu <strong>Cl</strong>ass mein
+              <strong>B</strong>o<strong>r</strong>ing
+              <strong>I</strong>nstructor <strong>A</strong>a<strong>t</strong>a
+              hai`,
+    englishHint: `              
+    <strong>F</strong>irst <strong>C</strong>lass
+              <strong>B</strong>iriyani <strong>I</strong>n
+              <strong>A</strong>us<strong>t</strong>ria`,
+  },
+
 ];
