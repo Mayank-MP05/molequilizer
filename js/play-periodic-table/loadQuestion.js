@@ -31,6 +31,7 @@ const PeriodicGameState = {
 
 const GetNewQuestion = () => {
   console.log("UI Updator Called...");
+
   let randomIndex = Math.floor(Math.random() * quizesDB.length);
   PeriodicGameState.quizArr = quizesDB[randomIndex].quizData;
 
@@ -127,6 +128,7 @@ GetNewQuestion();
 UIupdator();
 
 $(".new-reaction-btn").on("click", () => {
+  clearTheInputs();
   GetNewQuestion();
   UIupdator();
   bohrModelUpdator();

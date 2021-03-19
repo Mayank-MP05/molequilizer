@@ -56,6 +56,7 @@ $("#submit").on("click", () => {
     $(`.${PeriodicGameState.selctedAns}_li`).addClass("correct-option");
 
     //TODO: Congratulation Modal
+    callCongratulations();
   } else {
     //Else if Selected and Correct are diff
     $(`.${PeriodicGameState.selctedAns}_li`).addClass("wrong-option");

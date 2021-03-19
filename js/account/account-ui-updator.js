@@ -61,6 +61,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     // alert("No user signed in");
     joinInTriggerBtn.show();
     dropdownTriggerBtn.hide();
-    window.location.href = "./learn.html";
+    window.location.href = "./";
   }
 });

@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="./css/playground.css" />
     <link rel="stylesheet" href="./css/bohr-model.css">
     <link rel="stylesheet" href="./css/play-periodic-table.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/congratulations.css">
+ 
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -316,11 +319,9 @@
       </div>
     </div>
     <!-- Login modal end here -->
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script> -->
+    <div class="congrats" style="z-index: 1051;">
+      <h1 class="text-green" style="color: #63d297;">Congratulations!</h1>
+  </div>
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> 
     <script
@@ -355,5 +356,10 @@
 
     <script src="./js/play-periodic-table/atomicBohrModel.min.js"></script>
     <script src="./js/play-periodic-table/render-bohr-model.js"></script>
+
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <script src="./js/periodic-table/congratulations-effect.js"></script>
   </body>
 </html>
