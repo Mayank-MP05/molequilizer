@@ -31,6 +31,140 @@ let quizesDB = [
     duty
   `,
   },
+  {
+    quizData: ["He","Ne", "Ar", "Kr", "Xe", "Rn"],
+    hindiHint: `<strong>He</strong> <strong>Ne</strong>ver <strong>Ar</strong>gue;
+              <strong>K</strong>al <strong>Xe</strong>ro
+              <strong>R</strong>u<strong>n</strong> pe out hua`,
+    englishHint: `              
+    <em><strong>He</strong>ro&nbsp;</em><strong>Ne</strong
+              ><em>ver&nbsp;</em
+              >Ar<em>rived;&nbsp;</em>K<em>i</em>r<em>an&nbsp;</em>Xe<em>roxed&nbsp;</em>from&nbsp;<em
+                >R</em
+              ><em>oha</em>n`,
+  },
+    {
+    quizData: ["Sc" ,"Ti" , "V" , "Cr", "Mn"],
+    hindiHint: `<strong>Sc</strong>ience <strong>Ti</strong>(ea)cher
+              <strong>V</strong>ineeta <strong>Cr</strong>iplani
+              <strong>M</strong>a<strong>n</strong> Fenko
+              (<strong>FeCo</strong>) <strong>Ni</strong> Kyun
+              (<strong>Cu</strong>) <strong>Z</strong>aa<strong>n</strong> hai?`,
+    englishHint: `              
+    <strong>Sc</strong>ience <strong>Ti</strong>(ea)cher
+              <strong>V</strong>ineeta <strong>Cr</strong>iplani (and)
+              <strong>M</strong>a<strong>n</strong>ager <strong>Fe</strong>roz
+              <strong>Co</strong>uld <strong>N</strong>ot <strong>Cu</strong>t
+              <strong>Z</strong>i<strong>n</strong>c`,
+  },
+  {
+    quizData: ["Fe", "Co", "Ni", "Cu", "Zn"],
+    hindiHint: `<strong>Sc</strong>ience <strong>Ti</strong>(ea)cher
+              <strong>V</strong>ineeta <strong>Cr</strong>iplani
+              <strong>M</strong>a<strong>n</strong> Fenko
+              (<strong>FeCo</strong>) <strong>Ni</strong> Kyun
+              (<strong>Cu</strong>) <strong>Z</strong>aa<strong>n</strong> hai?`,
+    englishHint: `              
+    <strong>Sc</strong>ience <strong>Ti</strong>(ea)cher
+              <strong>V</strong>ineeta <strong>Cr</strong>iplani (and)
+              <strong>M</strong>a<strong>n</strong>ager <strong>Fe</strong>roz
+              <strong>Co</strong>uld <strong>N</strong>ot <strong>Cu</strong>t
+              <strong>Z</strong>i<strong>n</strong>c`,
+  },
+  {
+    quizData: ["Y", "Zr" ,"Nb" ,"Mo", "Tc"],
+    hindiHint: `<strong>Y</strong>e <strong>Z</strong>a<strong>r</strong>a
+              <strong>N</strong>awaa<strong>b</strong> <strong>M</strong>aut
+              <strong>T</strong>ak Rooh <strong>R</strong>a<strong>h</strong>egi
+              <strong>P</strong>a<strong>d</strong>haai
+              <strong>A</strong>a<strong>g</strong>e Chho<strong>d</strong>o`,
+    englishHint: `              
+     <em><strong>Y</strong>es,&nbsp;</em><strong>Z</strong><em>e</em
+              ><strong>r</strong><em>o&nbsp;</em><strong>N</strong><em>o</em
+              ><strong>b</strong><em>ody.&nbsp;</em><strong>Mo</strong
+              ><em>st&nbsp;</em><strong>T</strong><em>ea</em><strong>c</strong
+              ><em>hers&nbsp;</em><strong>R</strong><em>echecked&nbsp;</em
+              ><strong>R</strong><em>o</em><strong>h</strong><em>an’s&nbsp;</em
+              ><strong>P</strong><em>apers&nbsp;</em><strong>Ag</strong
+              ><em>ain to&nbsp;</em><strong>C</strong><em>onfirm</em>`,
+  },
+  {
+    quizData: ["  Ru"," Rh" ,"Pd" ,"Ag", "Cd"],
+    hindiHint: `<strong>Y</strong>e <strong>Z</strong>a<strong>r</strong>a
+              <strong>N</strong>awaa<strong>b</strong> <strong>M</strong>aut
+              <strong>T</strong>ak Rooh <strong>R</strong>a<strong>h</strong>egi
+              <strong>P</strong>a<strong>d</strong>haai
+              <strong>A</strong>a<strong>g</strong>e Chho<strong>d</strong>o`,
+    englishHint: `              
+     <em><strong>Y</strong>es,&nbsp;</em><strong>Z</strong><em>e</em
+              ><strong>r</strong><em>o&nbsp;</em><strong>N</strong><em>o</em
+              ><strong>b</strong><em>ody.&nbsp;</em><strong>Mo</strong
+              ><em>st&nbsp;</em><strong>T</strong><em>ea</em><strong>c</strong
+              ><em>hers&nbsp;</em><strong>R</strong><em>echecked&nbsp;</em
+              ><strong>R</strong><em>o</em><strong>h</strong><em>an’s&nbsp;</em
+              ><strong>P</strong><em>apers&nbsp;</em><strong>Ag</strong
+              ><em>ain to&nbsp;</em><strong>C</strong><em>onfirm</em>`,
+  },
+  {
+    quizData: ["  Lu ","Hf", "Tu"," W", "Re"],
+    hindiHint: `<strong>L</strong>a <strong>H</strong>a<strong>fT</strong>a
+              <strong>W</strong>arna <strong>Re</strong> Us
+              (<strong>Os</strong>) <strong>Ir</strong>on rod se
+              <strong>P</strong>i<strong>t</strong>ega <strong>Au</strong>r
+              <strong>H</strong>ospital J<strong>A</strong>eeg<strong>a</strong>`,
+    englishHint: `              
+    <em><strong>La</strong>xman’s&nbsp;</em><strong>H</strong
+              ><em>al</em><strong>f</strong> <strong>Ta</strong
+              ><em>ken,&nbsp;</em><strong>W</strong><em>asim&nbsp;</em
+              ><strong>Re</strong><em>ached&nbsp;</em><strong>O</strong
+              ><em>ut&nbsp;</em><strong>Ir</strong><em>on Plate&nbsp;</em
+              ><strong>Au</strong><em>dibly (for)&nbsp;</em><strong>H</strong
+              ><em>oney</em>`,
+  },
+  {
+    quizData: ["Os", "Ir" ,"Pt", "Au", "Hg"],
+    hindiHint: `<strong>L</strong>a <strong>H</strong>a<strong>fT</strong>a
+              <strong>W</strong>arna <strong>Re</strong> Us
+              (<strong>Os</strong>) <strong>Ir</strong>on rod se
+              <strong>P</strong>i<strong>t</strong>ega <strong>Au</strong>r
+              <strong>H</strong>ospital J<strong>A</strong>eeg<strong>a</strong>`,
+    englishHint: `              
+    <em><strong>La</strong>xman’s&nbsp;</em><strong>H</strong
+              ><em>al</em><strong>f</strong> <strong>Ta</strong
+              ><em>ken,&nbsp;</em><strong>W</strong><em>asim&nbsp;</em
+              ><strong>Re</strong><em>ached&nbsp;</em><strong>O</strong
+              ><em>ut&nbsp;</em><strong>Ir</strong><em>on Plate&nbsp;</em
+              ><strong>Au</strong><em>dibly (for)&nbsp;</em><strong>H</strong
+              ><em>oney</em>`,
+  },
+  {
+    quizData: ["Ac", "Rf", "Db" ,"Sg"],
+    hindiHint: `<strong>Ak</strong>kountant <strong>R D</strong>
+              <strong>S</strong>harma ki <strong>B</strong>ook Mein
+              <strong>H</strong>ain <strong>M</strong>a<strong>t</strong>hs ke
+              <strong>D</strong>arawane <strong>S</strong>awaal`,
+    englishHint: `              
+    <em><strong>Ak</strong>t</em><em>ually,&nbsp;</em
+              ><strong>R D<em>&nbsp;</em>S</strong><em>harma&nbsp;</em
+              ><strong>B</strong><em>ook&nbsp;</em><strong>H</strong><em>a</em
+              ><strong>s</strong><em>&nbsp;</em><strong>M</strong><em>a</em
+              ><strong>t</strong><em>h</em>&nbsp;<strong><em>D</em></strong
+              ><em>ifficult&nbsp;</em><strong>S</strong><em>ums</em>`,
+  },
+  {
+    quizData: ["Bh", "Hs" ,"Mt" ,"Ds"],
+    hindiHint: `<strong>Ak</strong>kountant <strong>R D</strong>
+              <strong>S</strong>harma ki <strong>B</strong>ook Mein
+              <strong>H</strong>ain <strong>M</strong>a<strong>t</strong>hs ke
+              <strong>D</strong>arawane <strong>S</strong>awaal`,
+    englishHint: `              
+    <em><strong>Ak</strong>t</em><em>ually,&nbsp;</em
+              ><strong>R D<em>&nbsp;</em>S</strong><em>harma&nbsp;</em
+              ><strong>B</strong><em>ook&nbsp;</em><strong>H</strong><em>a</em
+              ><strong>s</strong><em>&nbsp;</em><strong>M</strong><em>a</em
+              ><strong>t</strong><em>h</em>&nbsp;<strong><em>D</em></strong
+              ><em>ifficult&nbsp;</em><strong>S</strong><em>ums</em>`,
+  },
 {
     quizData: ["O", "S", "Se", "Te", "Po"],
     hindiHint: `Oh<em>,</em>&nbsp;<strong>S</strong>eema<em>&nbsp;</em
