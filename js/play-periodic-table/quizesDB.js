@@ -31,7 +31,7 @@ let quizesDB = [
     duty
   `,
   },
-  {
+{
     quizData: ["O", "S", "Se", "Te", "Po"],
     hindiHint: `Oh<em>,</em>&nbsp;<strong>S</strong>eema<em>&nbsp;</em
     ><strong>Se</strong>nt<em>&nbsp;</em><strong>T</strong>h<strong
@@ -42,4 +42,5 @@ let quizesDB = [
     <strong>S</strong>ax<strong>e</strong>na <strong>Te</strong>ri
     <strong>Po</strong>l Kholu`,
   },
+
 ];
