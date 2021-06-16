@@ -12,6 +12,11 @@
   user-select: none;
 }
 
+@media only screen and (max-width: 600px) {
+  .customcheck {
+    padding-left: 65px;
+  }
+}
 /* Hide the browser's default checkbox */
 .customcheck input {
   position: absolute;

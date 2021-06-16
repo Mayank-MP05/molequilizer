@@ -148,7 +148,9 @@ const renderList = () => {
 
   let content = "";
   let isFirst = true;
-
+  let width = window.innerWidth;
+  let isMobile = false;
+  if (width <= 600) isMobile = true;
   for (let i = 0; i < VideosData.length; i++) {
     content += `      
       <div class="accordion" id="accordionExample${i}">
@@ -160,10 +162,14 @@ const renderList = () => {
             aria-expanded="true"
             aria-controls="collapseOne${i}">
                 <img src="../img/learn/video-thumbnail.png" hieght="30" width="30"/>
-              <span class="pl-1 font-wieght-bold">${VideosData[i].title}</span>
+              <span class="pl-1 font-wieght-bold">${
+                isMobile
+                  ? VideosData[i].title.substr(0, 20) + "..."
+                  : VideosData[i].title
+              }</span>
             </button>
             <label class="customcheck ml-auto" id="checkBoxLabel"
-              >Completed
+              >${isMobile ? "" : "Completed"}
               <input type="checkbox"   ${
                 learnPageState.completedArr[i] ? `checked="checked"` : ""
               } onChange="checkChanged(this)" id="${i}"/>
