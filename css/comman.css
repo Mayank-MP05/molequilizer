@@ -54,3 +54,19 @@ nav {
 .bg-green {
   background-color: #63d297;
 }
+
+@media only screen and (max-width: 600px) {
+  /* Mobile CSS*/
+  button.navbar-toggler {
+    /* margin: 25px auto 0 auto; */
+  }
+  nav .nav-icon-logo {
+    width: 60%;
+    margin: auto;
+  }
+
+  .dropdown .btn,
+  #Join-In-Trigger-Button {
+    width: 100%;
+  }
+}
