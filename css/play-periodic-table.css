@@ -159,10 +159,10 @@ li label {
     width: 64%;
   }
   #submit {
-    width: 60%;
+    width: 55%;
   }
   #clear {
-    width: auto;
+    width: 35%;
   }
 }
 @media (max-width: 600px) {
@@ -181,10 +181,10 @@ li label {
     width: 60%;
   }
   #submit {
-    width: 60%;
+    width: 55%;
   }
   #clear {
-    width: auto;
+    width: 35%;
   }
 }
 /* Shake on Right or Wrong Answer */
