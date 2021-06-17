@@ -156,12 +156,17 @@ li label {
   min-width: 80%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  /* Mobile CSS */
   .centre-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  #periodic-container {
+    flex-direction: column;
   }
 }
 /* Shake on Right or Wrong Answer */
