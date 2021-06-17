@@ -37,61 +37,37 @@ const bohrModelUpdator = (atomicNo = 1, destroy = false) => {
   var speed = 180, // how fast the atoms come into existence
     myAtoms = [];
   // Check for mobile
-  isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+  isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
 
   let arr = [atomicNo];
 
-  if (!isMobile) {
-    $("#periodic-container").html("");
-    for (var i = 1; i <= arr.length; i++) {
-      // iterate over all existing atoms
-      (function (i) {
-        setTimeout(function () {
-          $("#periodic-container").append(
-            `<div class=\'col-md-12 element-container\' id='bohr-container-${i}'></div>`
-          );
-          atomConfig.numElectrons = arr[i - 1];
-          atomConfig.idNumber = i;
-          atomConfig.containerId = `#bohr-container-${i}`;
-          var $container = $(`#bohr-container-${i}`);
-          var newAtom = new Atom(atomConfig);
-          var $atom = $(`#atom-${i}`);
-          $atom.addClass("clickable-atom");
-          // newAtom.infoFunc = $atom.click(function () {
-          //   $atom.attr("data-toggle", "modal");
-          //   $atom.attr("data-target", ".bs-example-modal-lg");
-          //   $(".modal-title").text(newAtom.elementName);
-          //   $(".wiki-url").attr("href", newAtom.wikiUrl);
-          //   $(".wiki-summary").text(newAtom.wikiSummary);
-          // });
-          var rotateConfig = { speed: 300, clockwise: true };
-          newAtom.rotate(rotateConfig);
-          myAtoms.push(newAtom);
-        }, i * speed);
-      })(i);
-    }
-    // // begin rotations after all have come into existence
-    // setTimeout(function () {
-    //   myAtoms.reverse();
-    //   for (var j = 0; j <= 117; j++) {
-    //     (function (j) {
-    //       setTimeout(function () {
-    //         var orbitalPattern = rotationalPatterns[getRandomInt(0, 7)],
-    //           alternating = alternate[getRandomInt(0, 1)];
-    //         orbitalRotationConfig.pattern.preset = orbitalPattern;
-    //         orbitalRotationConfig.pattern.alternating = alternating;
-    //         alternating = alternate[getRandomInt(0, 1)];
-    //         orbitalRotationConfig.pattern.clockwise = alternating;
-    //         var $container = $(`#bohr-container-${118 - j}`);
-    //         glow($container);
-    //         myAtoms[j].rotateOrbitals(orbitalRotationConfig);
-    //         myAtoms[j].rotationPattern = orbitalRotationConfig; // Store rotation pattern to show in UI
-    //       }, j * 200);
-    //     })(j);
-    //   }
-    // }, speed * 130);
+  // if (!isMobile) {
+  $("#periodic-container").html("");
+  for (var i = 1; i <= arr.length; i++) {
+    // iterate over all existing atoms
+    (function (i) {
+      setTimeout(function () {
+        $("#periodic-container").append(
+          `<div class=\'col-md-12 element-container\' id='bohr-container-${i}'></div>`
+        );
+        atomConfig.numElectrons = arr[i - 1];
+        atomConfig.idNumber = i;
+        atomConfig.containerId = `#bohr-container-${i}`;
+        var $container = $(`#bohr-container-${i}`);
+        var newAtom = new Atom(atomConfig);
+        var $atom = $(`#atom-${i}`);
+        $atom.addClass("clickable-atom");
+
+        var rotateConfig = { speed: 300, clockwise: true };
+        newAtom.rotate(rotateConfig);
+        myAtoms.push(newAtom);
+      }, i * speed);
+    })(i);
+  }
+  /*
   } else {
     // mobile
     var randInt = function () {
@@ -126,7 +102,7 @@ const bohrModelUpdator = (atomicNo = 1, destroy = false) => {
     $("#periodic-container").append(
       `<div class=\'col-sm-12\'><h2 class='atomic-details'></h2></div>`
     );
-    $(".atomic-details").text(newAtom.wikiSummary);
+    // $(".atomic-details").text(newAtom.wikiSummary);
     var $atom = $(`#atom-1`);
     $("#periodic-container").click(function () {
       orbitalPattern = rotationalPatterns[getRandomInt(0, 7)];
@@ -151,7 +127,7 @@ const bohrModelUpdator = (atomicNo = 1, destroy = false) => {
         newAtom.rotateOrbitals(orbitalRotationConfig);
       }, 1500);
     });
-  }
+  }*/
   if (destroy) {
     myAtoms.forEach((el) => el.destroy());
     // newAtom.destroy();

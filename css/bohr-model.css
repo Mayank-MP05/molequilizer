@@ -64,7 +64,7 @@ a:hover {
     color: grey;
   }
   .element-container {
-    height: 100vh;
+    height: 50vh;
     width: 100%;
     margin-top: -10%;
     transition: 0.5s linear all;
