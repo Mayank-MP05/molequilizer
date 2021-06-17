@@ -146,9 +146,7 @@ body {
 }
 
 .reactionLoading {
-  width: 40%;
-  margin-top: 10%;
-  margin-left: 35%;
+  width: 100%;
 }
 
 .reactionSpan {
