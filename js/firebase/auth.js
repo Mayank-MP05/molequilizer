@@ -69,3 +69,23 @@ joinInBtn.addEventListener("click", () => {
       }
     });
 });
+
+$(document).ready(() => {
+  const links = $("#auth-toggler-btn");
+  const title = $("#auth-toggler-title");
+  const btn = $("#sign-in-button");
+
+  var logInActive = true;
+  links.click(() => {
+    if (logInActive) {
+      links.html("Already have a acct. Log in...");
+      title.html("Create new account");
+      btn.html("Sign Up");
+    } else {
+      links.html("Create an account..");
+      title.html("Log in");
+      btn.html("Sign In");
+    }
+    logInActive = !logInActive;
+  });
+});
