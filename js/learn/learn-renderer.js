@@ -164,7 +164,7 @@ const renderList = () => {
                 <img src="../img/learn/video-thumbnail.png" hieght="30" width="30"/>
               <span class="pl-1 font-wieght-bold">${
                 isMobile
-                  ? VideosData[i].title.substr(0, 20) + "..."
+                  ? VideosData[i].title.substr(0, 25) + "..."
                   : VideosData[i].title
               }</span>
             </button>
