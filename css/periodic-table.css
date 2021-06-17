@@ -316,4 +316,11 @@ input[type="radio"] {
   .w-250 {
     width: 250%;
   }
+  .view-periodic-table-page svg {
+    margin: 0;
+    height: 100%;
+  }
+  .element-container {
+    height: 40vh;
+  }
 }
