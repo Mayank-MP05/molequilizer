@@ -22,11 +22,12 @@ let cp1 = $("#cp1");
 let cp2 = $("#cp2");
 
 let tempWidth = window.innerHeight * 0.95;
+const isMobile = window.innerWidth <= 600 ? true : false;
 var options = {
   domElement: "#rmol",
   uniqueId: 1,
-  width: tempWidth,
-  height: 500,
+  width: isMobile ? window.innerWidth * 0.95 : window.innerWidth * 0.45,
+  height: isMobile ? window.innerHeight * 0.4 : window.innerHeight * 0.65,
   borderThickness: 1,
   borderColor: "#ffffff",
   background: "#ffffff",
@@ -36,7 +37,7 @@ var options = {
   theta: 0.8,
   linkStrength: 1,
   gravity: 0.1,
-  maxAtomRadius: 6,
+  maxAtomRadius: isMobile ? 3 : 6,
   colorScheme: ["#2AA9CC", "#FCF78A"],
   bondThickness: 2,
   bondColor: "#000000",
@@ -279,4 +280,3 @@ const setReaction = (index) => {
   UIupdater();
   closeNav();
 };
-

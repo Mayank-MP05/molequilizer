@@ -52,8 +52,8 @@
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -192,7 +192,7 @@
           </div>
     
           <div id="periodictablediv" class="roundcorners tablediv">
-          <table id="periodictable" style="width: 100%; height: 100%; border-spacing: 4px;"></table>
+          <table id="periodictable" style="height: 100%; border-spacing: 4px;"></table>
         </div>
     
     
@@ -203,7 +203,7 @@
     
       <div id="infobox"
        class="border roundcorners"
-      style="position:absolute;  width: 80%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFFFFF; visibility: hidden;">
+      >
         <div class="modal-header">
           <h5 class="modal-title" id="elementDetailsModalLabel">
 
@@ -217,15 +217,16 @@
         </div>  
         <div class="modal-body">
           <div class="row p-0">
-      <div class="col d-flex flex-column justify-content-center" style="width:50%;float:left">
+      <div class="col-md-6 col-sm-12 justify-content-center" >
         
-          <div><div class="w-100 periodic-container" id="periodic-container">
+          <div class="parent-periodic-table"><div class="w-100 periodic-container" id="periodic-container">
             Loading ...
           </div></div>
           <div id="ElectronicConfig"></div>
           <div id="ECSemantics"></div>
         </div>
-        <table style="width:50%;float:right">
+        <div class="col-md-6 col-sm-12 text-left">
+        <table>
             <tr><th colspan="2" id="infoName" class="thelementname"></th></tr>
             <tr><th>Atomic number</th><td id="infoAtomicNumber"></th></tr>
               <tr><th>Chemical Symbol</th><td id="infoChemicalSymbol"></td></tr>
@@ -238,7 +239,9 @@
               <tr><th>Period</th><td id="infoPeriod"></td></tr>
               <tr><th>Block</th><td id="infoBlock"></td></tr>
               <!-- <tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Close</div></td></tr> -->
-        </table></div>
+        </table> </div>
+      </div>
+
         <p class="p-2" id="BriefSummary">{Summary of the element heree}</p>
         </div>
         <div class="modal-footer">
@@ -261,10 +264,6 @@
         </div>
       </div>
     </div>
-    </div>
-
-    <div class="container d-none">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquam porro mollitia odit voluptates nihil laborum ut odio fugiat, nulla voluptatibus vel inventore error culpa ullam voluptatem. Beatae, aliquam ducimus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo culpa voluptas perspiciatis, architecto quidem quas illo optio fugit eos aperiam provident sequi vel numquam impedit deserunt, magni alias ut obcaecati et placeat iusto id quaerat iste. Fugit deserunt laboriosam, inventore voluptas consectetur saepe voluptate rem eligendi dolore unde maiores! Tenetur, laboriosam quae expedita ea, cumque, ipsum iure sequi nisi unde fugit doloremque iusto deserunt nulla laborum ullam quibusdam autem quaerat facilis quo dolor velit! Voluptatum facere ut cupiditate optio sed recusandae id blanditiis officia quo aliquid? Adipisci quos tenetur illum ipsam perspiciatis fugiat repudiandae. Id consectetur necessitatibus dignissimos nihil rerum rem ex vitae minus, libero, incidunt ullam tenetur in. Asperiores adipisci fuga deleniti voluptatum expedita vel, illum saepe explicabo? Excepturi expedita eligendi cum optio harum ad, nam ipsum accusamus voluptatum ducimus modi aperiam, nesciunt dolore officiis incidunt aut tempora quod distinctio dignissimos placeat, nemo magni a perferendis ratione? Fuga natus quod officiis, commodi nam consectetur voluptates, quos in sunt, nobis necessitatibus nesciunt repellendus aliquid qui asperiores quisquam corrupti similique? Quos quisquam nostrum aspernatur, inventore iusto ad cumque quas facere tenetur, odio, deserunt exercitationem rerum provident aperiam ut tempore magnam iste voluptates beatae eligendi dolor suscipit? Excepturi mollitia praesentium pariatur ea. Tempora aut voluptas quis quaerat quos asperiores fugit reprehenderit nisi hic perferendis quo deleniti laudantium velit amet totam iusto beatae, sapiente cupiditate quia adipisci quibusdam harum. Quaerat autem fuga dolor, consequuntur eligendi id tempora et iure sed aliquid soluta deleniti assumenda animi, harum ad voluptates sapiente consequatur nemo reprehenderit ea accusantium. Reprehenderit atque, fugiat officia pariatur provident dolore officiis ad adipisci aliquid, quaerat voluptate cumque beatae dolores magni veniam. Provident aperiam voluptates quasi neque pariatur autem eligendi quis enim impedit facilis, animi distinctio accusantium voluptate tempora suscipit? Rem optio labore consequatur vitae unde illum molestiae aliquid, fugiat nemo ipsam expedita?
     </div>
 
     <!-- Login Modal Start here -->
