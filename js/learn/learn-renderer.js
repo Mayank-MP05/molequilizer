@@ -38,8 +38,9 @@ let learnPageState = {
   progress: 0,
   completedArr: [false, false, false, false, false, false],
 };
-
+$(".progress-card").hide();
 firebase.auth().onAuthStateChanged(function (user) {
+  $(".progress-card").hide();
   if (user) {
     db.collection("progress")
       .doc(user.email)
