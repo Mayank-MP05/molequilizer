@@ -186,6 +186,15 @@ li label {
   #clear {
     width: 35%;
   }
+  .mobile-flexer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .congo-text {
+    max-width: 100%;
+  }
 }
 /* Shake on Right or Wrong Answer */
 .face:hover {
