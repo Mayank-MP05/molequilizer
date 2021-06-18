@@ -23,6 +23,14 @@ joinInBtn.addEventListener("click", () => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
+      //TODO: Pushing progress report to Server
+      db.collection("progress")
+        .doc(user.email)
+        .set({ arr: [false, false, false, false, false, false] })
+        .then((doc) => {
+          console.log(doc.data());
+        })
+        .catch((e) => {});
       console.log(user);
       $("#errorAlert").hide();
       $("#AccountCreationAlert").show();
@@ -43,6 +51,7 @@ joinInBtn.addEventListener("click", () => {
             // Signed in
             var user = userCredential.user;
             console.log(user);
+
             $("#LoginAlert").show();
             setTimeout(() => {
               $("#exampleModalCenter").modal("hide");
