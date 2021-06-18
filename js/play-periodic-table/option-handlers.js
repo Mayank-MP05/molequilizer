@@ -1,3 +1,8 @@
+// importing sound
+let successAudio = new Audio('./sound/success.mp3')
+let errorAudio = new Audio('./sound/error.mp3')
+successAudio.loop = errorAudio.loop = false;
+
 // Handler for Background Color Check for Options
 $("#quiz-form input").on("change", function () {
   $(".a_li").removeClass("selected-option");
@@ -56,8 +61,12 @@ $("#submit").on("click", () => {
     $(`.${PeriodicGameState.selctedAns}_li`).addClass("correct-option");
 
     //TODO: Congratulation Modal
+    successAudio.currentTime = 0;
+    successAudio.play();
     callCongratulations();
   } else {
+    errorAudio.currentTime = 0;
+    errorAudio.play();
     //Else if Selected and Correct are diff
     $(`.${PeriodicGameState.selctedAns}_li`).addClass("wrong-option");
     // console.log(`.${mapper[PeriodicGameState.correctAns]}_li`);

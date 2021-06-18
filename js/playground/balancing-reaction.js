@@ -1,4 +1,7 @@
 let bubbleAudio = new Audio('./sound/Bubbles.mp3')
+let successAudio = new Audio('./sound/success.mp3')
+let errorAudio = new Audio('./sound/error.mp3')
+bubbleAudio.loop = successAudio.loop = errorAudio.loop = false;
 // bubbleAudio.play() 
 
 function gcd_two_numbers(x, y) {
@@ -7,6 +10,7 @@ function gcd_two_numbers(x, y) {
 
 $("#CheckTheBalanceBtn").on("click", () => {
   // bubbleAudio.play();
+  // this is
   // console.log("modal open");
   // $("#exampleModal").modal("show");
 
@@ -108,12 +112,11 @@ $("#CheckTheBalanceBtn").on("click", () => {
     $("#modelBorderFrame").attr("style", "border: 3px solid red");
   }
 
+  // playing bubble sound
   bubbleAudio.play();
-  console.log("modal open");
   balanced ? $("#reactionLoading").attr("src", "./img/playground/green_flask.gif") 
           :  $("#reactionLoading").attr("src", "./img/playground/red_flask.gif") 
   $("#exampleModal").modal("show");
-  console.log(balanced)
 
   //Cacluclate Random time for modal
   //why random?
@@ -122,6 +125,9 @@ $("#CheckTheBalanceBtn").on("click", () => {
   setTimeout(() => {
     bubbleAudio.pause();
     bubbleAudio.currentTime = 0;
+    successAudio.currentTime = errorAudio.currentTime = 0;
+    if(balanced) successAudio.play();
+    else errorAudio.play();
     $("#reactionLoading").addClass("d-none");
     $("#resultDialogue").removeClass("d-none");
   }, loadTime);
