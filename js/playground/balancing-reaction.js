@@ -1,10 +1,18 @@
+let bubbleAudio = new Audio('./sound/Bubbles.mp3')
+let successAudio = new Audio('./sound/success.mp3')
+let errorAudio = new Audio('./sound/error.mp3')
+bubbleAudio.loop = successAudio.loop = errorAudio.loop = false;
+// bubbleAudio.play() 
+
 function gcd_two_numbers(x, y) {
   return y == 0 ? x : gcd_two_numbers(y, x % y);
 }
 
 $("#CheckTheBalanceBtn").on("click", () => {
-  console.log("modal open");
-  $("#exampleModal").modal("show");
+  // bubbleAudio.play();
+  // this is
+  // console.log("modal open");
+  // $("#exampleModal").modal("show");
 
   //Input the values of Coeficeints
   let cr1 = $("#cr1").val();
@@ -104,9 +112,22 @@ $("#CheckTheBalanceBtn").on("click", () => {
     $("#modelBorderFrame").attr("style", "border: 3px solid red");
   }
 
+  // playing bubble sound
+  bubbleAudio.play();
+  balanced ? $("#reactionLoading").attr("src", "./img/playground/green_flask.gif") 
+          :  $("#reactionLoading").attr("src", "./img/playground/red_flask.gif") 
+  $("#exampleModal").modal("show");
+
   //Cacluclate Random time for modal
-  let loadTime = Math.random() * 2000;
+  //why random?
+  //let loadTime = Math.random() * 3000;
+  let loadTime = 3000;
   setTimeout(() => {
+    bubbleAudio.pause();
+    bubbleAudio.currentTime = 0;
+    successAudio.currentTime = errorAudio.currentTime = 0;
+    if(balanced) successAudio.play();
+    else errorAudio.play();
     $("#reactionLoading").addClass("d-none");
     $("#resultDialogue").removeClass("d-none");
   }, loadTime);
