@@ -10,6 +10,15 @@ let isP2There = false;
 // if(p2 exists and p2 exists){
 //     then only render //:TODO
 // }
+const isMobile = window.innerWidth <= 600 ? true : false;
+
+if (!isMobile) {
+  const removedEl = document.querySelector(".controller-panel-mobile");
+  removedEl.parentElement.removeChild(removedEl);
+  console.log("Removed");
+} else {
+  console.log("Mobile Removed");
+}
 
 const elR1 = $("#r1");
 const elR2 = $("#r2");
@@ -25,8 +34,8 @@ let tempWidth = window.innerHeight * 0.95;
 var options = {
   domElement: "#rmol",
   uniqueId: 1,
-  width: tempWidth,
-  height: 500,
+  width: isMobile ? window.innerWidth * 0.95 : window.innerWidth * 0.45,
+  height: isMobile ? window.innerHeight * 0.4 : window.innerHeight * 0.65,
   borderThickness: 1,
   borderColor: "#ffffff",
   background: "#ffffff",
@@ -36,7 +45,7 @@ var options = {
   theta: 0.8,
   linkStrength: 1,
   gravity: 0.1,
-  maxAtomRadius: 6,
+  maxAtomRadius: isMobile ? 3 : 6,
   colorScheme: ["#2AA9CC", "#FCF78A"],
   bondThickness: 2,
   bondColor: "#000000",
@@ -279,4 +288,3 @@ const setReaction = (index) => {
   UIupdater();
   closeNav();
 };
-

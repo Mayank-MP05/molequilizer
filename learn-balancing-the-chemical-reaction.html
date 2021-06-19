@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/progress-bar.css" />
+     <!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=TRACKING_ID"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -52,8 +61,8 @@
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -145,7 +154,7 @@
       />
     </div>
 
-    <!-- Login Modal Start here -->
+       <!-- Login Modal Start here -->
     <div
       class="modal fade"
       id="exampleModalCenter"
@@ -173,7 +182,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -206,19 +215,7 @@
                 >
                   Sign in
                 </button>
-                <hr class="my-4" />
-                <button
-                  class="btn btn-lg btn-google btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-google mr-2"></i> Sign in with Google
-                </button>
-                <button
-                  class="btn btn-lg btn-facebook btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
-                </button>
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>

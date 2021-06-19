@@ -14,10 +14,18 @@
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/playground.css" />
     <link rel="stylesheet" href="./css/bohr-model.css">
+    <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/play-periodic-table.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/congratulations.css">
- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=TRACKING_ID"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-199287147-2');
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -54,8 +62,8 @@
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -111,7 +119,7 @@
     <div class="row p-0 m-0">
       <div class="quiz-container shadow m-auto" id="quiz">
         <div class="quiz-header">
-          <h2 id="question">This is some Question Text</h2>
+          <h2 id="question"></h2>
           <hr class="bg-green">
           <ul>
             <form id="quiz-form">
@@ -158,8 +166,9 @@
             </form>
           </ul>
         </div>
+        <div class="d-flex justify-content-around">
         <button id="submit">Check the Answer</button>
-        <button id="clear" class="btn btn-danger my-0">Clear the Choice</button>
+        <button id="clear" class="btn btn-danger my-0">Clear the Choice</button></div>
       </div>
     </div>
 
@@ -205,7 +214,7 @@
           </div>
           <div class="modal-body">
             <p class="font-weight-bold">Chemical Configurations of Elements</p>
-            <div id='periodic-container' class="periodic-container"></div>
+            <div id='periodic-container' class="periodic-container row"></div>
 
             <div class="flex">
 
@@ -266,7 +275,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -299,19 +308,7 @@
                 >
                   Sign in
                 </button>
-                <hr class="my-4" />
-                <button
-                  class="btn btn-lg btn-google btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-google mr-2"></i> Sign in with Google
-                </button>
-                <button
-                  class="btn btn-lg btn-facebook btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
-                </button>
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>
