@@ -47,10 +47,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       .get()
       .then((doc) => {
         console.log("Document data:", doc.data());
-        learnPageState.completedArr =
-          doc.data() != undefined
-            ? doc.data().arr
-            : [false, false, false, false, false, false];
+        learnPageState.completedArr = doc.data().arr;
         renderList();
         let c = 0;
         learnPageState.completedArr.forEach((el) => {
@@ -68,12 +65,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         for (let el of learnPageState.completedArr) {
           if (el) c++;
           else break;
-        }
-        if (c == learnPageState.completedArr.length) {
-          c--;
-        }
-        if (c == 0) {
-          c = 1;
         }
         $("#currLesson").html(
           `<span class="badge badge-success">Current Lesson</span> : ${
@@ -98,8 +89,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     // window.location.href = "learn.html";
     // alert("No user signed in");
     //
-    learnPageState.completedArr = [false, false, false, false, false, false];
-    $("#checkBoxLabel").hide();
+    (learnPageState.completedArr = [false, false, false, false, false, false]),
+      $("#checkBoxLabel").hide();
     $(".progress-card").hide();
     renderList();
   }
@@ -129,9 +120,6 @@ const checkChanged = (e) => {
   for (let el of learnPageState.completedArr) {
     if (el) c++;
     else break;
-  }
-  if (c == 0) {
-    c = 1;
   }
   $("#currLesson").html(
     `<span class="badge badge-success">Current Lesson</span> : ${
