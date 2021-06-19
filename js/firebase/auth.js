@@ -23,14 +23,6 @@ joinInBtn.addEventListener("click", () => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      //TODO: Pushing progress report to Server
-      db.collection("progress")
-        .doc(user.email)
-        .set({ arr: [false, false, false, false, false, false] })
-        .then((doc) => {
-          console.log(doc.data());
-        })
-        .catch((e) => {});
       console.log(user);
       $("#errorAlert").hide();
       $("#AccountCreationAlert").show();
@@ -51,7 +43,6 @@ joinInBtn.addEventListener("click", () => {
             // Signed in
             var user = userCredential.user;
             console.log(user);
-
             $("#LoginAlert").show();
             setTimeout(() => {
               $("#exampleModalCenter").modal("hide");
@@ -68,4 +59,24 @@ joinInBtn.addEventListener("click", () => {
         $("#errorAlert").html(errorMessage2).show();
       }
     });
+});
+
+$(document).ready(() => {
+  const links = $("#auth-toggler-btn");
+  const title = $("#auth-toggler-title");
+  const btn = $("#sign-in-button");
+
+  var logInActive = true;
+  links.click(() => {
+    if (logInActive) {
+      links.html("Already have a acct. Log in...");
+      title.html("Create new account");
+      btn.html("Sign Up");
+    } else {
+      links.html("Create an account..");
+      title.html("Log in");
+      btn.html("Sign In");
+    }
+    logInActive = !logInActive;
+  });
 });

@@ -20,6 +20,14 @@
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199287147-2"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -225,7 +233,7 @@
           <div class="row p-0">
       <div class="col-md-6 col-sm-12 justify-content-center" >
         
-          <div class="parent-periodic-table"><div class="w-100 periodic-container" id="periodic-container">
+          <div class="parent-periodic-table view-periodic-table-page"><div class="w-100 periodic-container" id="periodic-container">
             Loading ...
           </div></div>
           <div id="ElectronicConfig"></div>
@@ -271,7 +279,6 @@
       </div>
     </div>
     </div>
-
     <!-- Login Modal Start here -->
     <div
       class="modal fade"
@@ -300,7 +307,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -333,7 +340,7 @@
                 >
                   Sign in
                 </button>
-                
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>
@@ -341,7 +348,7 @@
       </div>
     </div>
     <!-- Login modal end here -->
-    <script
+     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"

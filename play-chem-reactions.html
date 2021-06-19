@@ -17,8 +17,17 @@
     <link href="./Molecules/dist/css/Molecule.css" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/playground.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199287147-2"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <div id="mySidenav" class="sidenav bg-light">
@@ -397,7 +406,7 @@
     </div>
     <!-- Hint modal ends here -->
 
-    <!-- Login Modal Start here -->
+        <!-- Login Modal Start here -->
     <div
       class="modal fade"
       id="exampleModalCenter"
@@ -425,7 +434,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -458,7 +467,7 @@
                 >
                   Sign in
                 </button>
-                
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>

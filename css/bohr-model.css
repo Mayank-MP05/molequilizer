@@ -76,7 +76,7 @@ a:hover {
     font-size: 6em;
   }
   h2 {
-    font-size: 3em;
+    /* font-size: 3em; */
   }
   .element-name {
     margin-top: -20%;

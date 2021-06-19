@@ -1,3 +1,4 @@
+$(".congrats").hide();
 $(function () {
   var numberOfStars = 200;
   $(".congrats").hide();
