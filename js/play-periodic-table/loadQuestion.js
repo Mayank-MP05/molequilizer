@@ -124,8 +124,10 @@ const UIupdator = () => {
   });
 };
 
-GetNewQuestion();
-UIupdator();
+$(document).ready(() => {
+  GetNewQuestion();
+  UIupdator();
+});
 
 $(".new-reaction-btn").on("click", () => {
   clearTheInputs();
