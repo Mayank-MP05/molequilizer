@@ -1,0 +1,12 @@
+const englishData = {
+    "Learn": "Learn",
+    "Types_of_chemical_reactions": "Types of Chemical reactions",
+    "Balance_the_chemical_reactions": "Balance the Chemical Reactions",
+    "View_periodic_table": "View Periodic Table",
+    "Tips_to_remember_periodic_table": "Tips to Remember Periodic Table",
+    "Play": "Play",
+    "molequilizer_chemical_reactions_game": "Molequilizer - Chemical Reactions Game",
+    "memperiodica_Periodic_table_game": "MemPeriodica - Periodic Table Game",
+    "Join_in" : "Join in",
+
+}
