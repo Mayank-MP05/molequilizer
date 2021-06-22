@@ -127,8 +127,10 @@ const UIupdator = () => {
 $(document).ready(() => {
   GetNewQuestion();
   UIupdator();
+  bohrModelUpdator();
 });
-
+// GetNewQuestion();
+// UIupdator();
 $(".new-reaction-btn").on("click", () => {
   clearTheInputs();
   GetNewQuestion();
