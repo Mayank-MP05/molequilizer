@@ -82,6 +82,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       .catch((error) => {
         console.log("Error getting document:", error);
         $(".progress-card").hide();
+        renderList();
       });
   } else {
     // No user is signed in.
