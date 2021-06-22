@@ -13,7 +13,36 @@
   border: 2px solid gray;
 }
 
-.table-holder{
+.table-holder {
   max-width: 100%;
   overflow-x: auto;
 }
+/*
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+*/
