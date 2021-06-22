@@ -65,6 +65,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          <div class="dropdown"><div class="btn dropdown-toggle" id="google_translate_element"></div></div>
+
           <div class="dropdown">
             <button class="btn dropdown-toggle m-2" type="button" id="learnDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="./img/nav/learn-emoji.png" class="emoji" alt="Learn"/>Learn
@@ -511,5 +513,25 @@
 
     <script src="./js/playground/left-sidebar.js"></script>
     <script src="./js/playground/balancing-reaction.js"></script>
+
+    
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+      $(window).load(function(){
+    $(".goog-logo-link").empty();
+    $('.goog-te-gadget').html($('.goog-te-gadget').children());
+})
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
   </body>
 </html>
