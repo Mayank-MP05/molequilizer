@@ -1,0 +1,79 @@
+------------------| H2O |--------------------
+{
+  "nodes":[
+{
+          id: 0,
+          atom: "H",
+          charge: "",
+          size: 1,
+        },
+{
+          id: 1,
+          atom: "H",
+          charge: "",
+          size: 1,
+        },
+{
+          id: 2,
+          atom: "O",
+          charge: "",
+          size: 32,
+        }
+],
+  "links":[{
+          source: 0,
+          target: 2,
+          bond: 1,
+        },{
+          source: 1,
+          target: 2,
+          bond: 2,
+        }]
+}
+      
+------------------| h2 |-----------------------
+
+{
+  "nodes":[
+{
+          id: 0,
+          atom: "H",
+          charge: "",
+          size: 1,
+        },
+{
+          id: 1,
+          atom: "H",
+          charge: "",
+          size: 1,
+        }
+],
+  "links":[{
+          source: 0,
+          target: 1,
+          bond: 1,
+        }]
+}
+ 
+ -------------------| O2 |-----------------------
+ {
+  "nodes":[
+{
+          id: 0,
+          atom: "O",
+          charge: "",
+          size: 32,
+        },
+{
+          id: 1,
+          atom: "O",
+          charge: "",
+          size: 32,
+        }
+],
+  "links":[{
+          source: 0,
+          target: 1,
+          bond: 2,
+        }]
+}
