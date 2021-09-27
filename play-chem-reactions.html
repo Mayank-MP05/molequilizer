@@ -17,8 +17,17 @@
     <link href="./Molecules/dist/css/Molecule.css" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/comman.css" />
+    <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/playground.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199287147-2"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <div id="mySidenav" class="sidenav bg-light">
@@ -76,8 +85,8 @@
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -127,10 +136,74 @@
       </div>
     </nav>
 
-    <div class="row p-0 m-0">
+    <div class="row p-0 m-0 reaction-row">
       <div class="col-md-6">
         <h3 id="floatingLabel">Reactants</h3>
         <div id="rmol" class="col"></div>
+      </div>
+      <div class="p-0 m-0 sticky-bottom controller-panel controller-panel-mobile">
+        <div
+          class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
+        >
+          <input
+            id="cr1"
+            type="number"
+            class="coeff"
+            min="1"
+            max="20"
+            value="1"
+          />
+          <h4 id="r1">ip1</h4>
+          <h4 id="r2plus">+</h4>
+  
+          <input
+            id="cr2"
+            type="number"
+            class="coeff"
+            min="1"
+            max="20"
+            value="1"
+          />
+          <h4 id="r2">ip2</h4>
+          <img src="./img/learn/right-arrow.png" width="50" alt="" />
+  
+          <input
+            id="cp1"
+            type="number"
+            class="coeff"
+            min="1"
+            max="20"
+            value="1"
+          />
+          <h4 id="p1">op1</h4>
+          <h4 id="p2plus">+</h4>
+  
+          <input
+            id="cp2"
+            type="number"
+            class="coeff"
+            min="1"
+            max="20"
+            value="1"
+          />
+          <h4 id="p2">op2<sub>4</sub></h4>
+        </div>
+        <div
+          class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
+        >
+          <div>
+            <button class="btn lgx-btn" id="CheckTheBalanceBtn">
+              Check the Balance
+            </button>
+            <button
+              class="btn lgx-btn bg-info p-0"
+              data-toggle="modal"
+              data-target="#exampleModal2"
+            >
+              <img src="./img/learn/idea.png" width="55" />
+            </button>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
         <h3 id="floatingLabel">Products</h3>
@@ -138,7 +211,7 @@
       </div>
     </div>
 
-    <div class="p-0 m-0 sticky-bottom">
+    <div class="p-0 m-0 sticky-bottom controller-panel controller-panel-desktop">
       <div
         class="m-1 d-flex flex-row justify-content-center align-items-center bottom-card"
       >
@@ -211,12 +284,14 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <img
-        src="./img/playground/chemical_reaction_animation.gif"
-        class="reactionLoading"
-        id="reactionLoading"
-        alt=""
-      />
+      <div class="modal-dialog">
+        <img
+          src=""
+          class="reactionLoading"
+          id="reactionLoading"
+          alt=""
+        />
+      </div>
       <div class="modal-dialog d-none" id="resultDialogue" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -331,7 +406,7 @@
     </div>
     <!-- Hint modal ends here -->
 
-    <!-- Login Modal Start here -->
+        <!-- Login Modal Start here -->
     <div
       class="modal fade"
       id="exampleModalCenter"
@@ -359,7 +434,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -392,7 +467,7 @@
                 >
                   Sign in
                 </button>
-                
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>

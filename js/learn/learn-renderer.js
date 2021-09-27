@@ -38,18 +38,16 @@ let learnPageState = {
   progress: 0,
   completedArr: [false, false, false, false, false, false],
 };
-
+$(".progress-card").hide();
 firebase.auth().onAuthStateChanged(function (user) {
+  $(".progress-card").hide();
   if (user) {
     db.collection("progress")
       .doc(user.email)
       .get()
       .then((doc) => {
         console.log("Document data:", doc.data());
-        learnPageState.completedArr =
-          doc.data() != undefined
-            ? doc.data().arr
-            : [false, false, false, false, false, false];
+        learnPageState.completedArr = doc.data().arr;
         renderList();
         let c = 0;
         learnPageState.completedArr.forEach((el) => {
@@ -67,12 +65,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         for (let el of learnPageState.completedArr) {
           if (el) c++;
           else break;
-        }
-        if (c == learnPageState.completedArr.length) {
-          c--;
-        }
-        if (c == 0) {
-          c = 1;
         }
         $("#currLesson").html(
           `<span class="badge badge-success">Current Lesson</span> : ${
@@ -97,8 +89,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     // window.location.href = "learn.html";
     // alert("No user signed in");
     //
-    learnPageState.completedArr = [false, false, false, false, false, false];
-    $("#checkBoxLabel").hide();
+    (learnPageState.completedArr = [false, false, false, false, false, false]),
+      $("#checkBoxLabel").hide();
     $(".progress-card").hide();
     renderList();
   }
@@ -129,9 +121,6 @@ const checkChanged = (e) => {
     if (el) c++;
     else break;
   }
-  if (c == 0) {
-    c = 1;
-  }
   $("#currLesson").html(
     `<span class="badge badge-success">Current Lesson</span> : ${
       VideosData[c - 1].title
@@ -148,7 +137,9 @@ const renderList = () => {
 
   let content = "";
   let isFirst = true;
-
+  let width = window.innerWidth;
+  let isMobile = false;
+  if (width <= 600) isMobile = true;
   for (let i = 0; i < VideosData.length; i++) {
     content += `      
       <div class="accordion" id="accordionExample${i}">
@@ -160,10 +151,14 @@ const renderList = () => {
             aria-expanded="true"
             aria-controls="collapseOne${i}">
                 <img src="../img/learn/video-thumbnail.png" hieght="30" width="30"/>
-              <span class="pl-1 font-wieght-bold">${VideosData[i].title}</span>
+              <span class="pl-1 font-wieght-bold">${
+                isMobile
+                  ? VideosData[i].title.substr(0, 25) + "..."
+                  : VideosData[i].title
+              }</span>
             </button>
             <label class="customcheck ml-auto" id="checkBoxLabel"
-              >Completed
+              >${isMobile ? "" : "Completed"}
               <input type="checkbox"   ${
                 learnPageState.completedArr[i] ? `checked="checked"` : ""
               } onChange="checkChanged(this)" id="${i}"/>

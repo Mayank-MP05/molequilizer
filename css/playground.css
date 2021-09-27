@@ -146,9 +146,7 @@ body {
 }
 
 .reactionLoading {
-  width: 40%;
-  margin-top: 10%;
-  margin-left: 35%;
+  width: 100%;
 }
 
 .reactionSpan {
@@ -159,4 +157,45 @@ body {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
+}
+
+/*Desktop CSS*/
+@media (min-width: 600px) {
+  .mobile-only {
+    display: none;
+  }
+  .controller-panel-mobile {
+    display: none;
+  }
+  .controller-panel-desktop {
+    display: block;
+  }
+}
+
+/*Mobile CSS*/
+@media (max-width: 600px) {
+  .reaction-row .col-md-6,
+  .reaction-row .col {
+    padding: 0;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .controller-panel-desktop {
+    display: none;
+  }
+  .controller-panel-mobile {
+    display: block;
+  }
+  .controller-panel {
+    max-width: 100%;
+  }
+  .coeff {
+    width: 30px;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

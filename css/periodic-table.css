@@ -59,31 +59,6 @@
   height: 42px;
   line-height: 42px;
 }
-/* 
-A:link {
-  text-decoration: none;
-  color: #ffffff;
-  outline: none;
-  border: 0;
-}
-A:visited {
-  text-decoration: none;
-  color: #ffffff;
-  outline: none;
-  border: 0;
-}
-A:active {
-  text-decoration: none;
-  color: #ffffff;
-  outline: none;
-  border: 0;
-}
-A:hover {
-  text-decoration: underline;
-  color: #ffffff;
-  outline: none;
-  border: 0;
-} */
 
 .button {
   cursor: pointer;
@@ -271,47 +246,6 @@ input[type="radio"] {
   color: #000000;
 }
 
-/* .alkalimetal {
-  background-color: #ff6666;
-}
-
-.alkalineearthmetal {
-  background-color: #ffdead;
-}
-
-.lanthanide {
-  background-color: #ffbfff;
-}
-
-.actinide {
-  background-color: #ff99cc;
-}
-
-.transitionmetal {
-  background-color: #ffc0c0;
-}
-
-.posttransitionmetal {
-  background-color: #cccccc;
-}
-
-.metalloid {
-  background-color: #cccc99;
-}
-
-.reactivenonmetal {
-  background-color: #f0ff8f;
-}
-
-.noblegas {
-  background-color: #c0ffff;
-}
-
-.unknown {
-  background-color: #e8e8e8;
-} */
-
-/* Block wise color distrubution */
 .sblock {
   background-color: #ff9999;
 }
@@ -342,4 +276,51 @@ input[type="radio"] {
   vertical-align: text-top;
   overflow: hidden;
   top: 0;
+}
+.parent-periodic-table {
+}
+
+@media only screen and (min-width: 600px) {
+  /* Desktop CSS */
+  .w-250 {
+    width: 100%;
+  }
+  #infobox {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* Mobile CSS*/
+  #periodictable {
+    width: auto;
+  }
+  #infobox {
+    position: absolute;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    /* transform: translate(-50%, -50%); */
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+  }
+  .parent-periodic-table {
+    overflow-x: auto;
+  }
+  .w-250 {
+    width: 250%;
+  }
+  .view-periodic-table-page svg {
+    margin: 0;
+    height: 100%;
+  }
+  .element-container {
+    height: 40vh;
+  }
 }

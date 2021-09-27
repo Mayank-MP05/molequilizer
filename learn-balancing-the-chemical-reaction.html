@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/progress-bar.css" />
+     <!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-199287147-2"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -39,26 +48,26 @@
         <ul class="navbar-nav ml-auto">
           <div class="dropdown">
             <button class="btn dropdown-toggle m-2" type="button" id="learnDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="./img/nav/learn-emoji.png" class="emoji" />Learn
+              <img src="./img/nav/learn-emoji.png" class="emoji" /><span id = "Learn">Learn</span>
               <span class="sr-only">(current)</span></a
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="learnDropdownMenuButton">
-              <a class="dropdown-item" href="./types-of-reactions.html">Types of Chemical Reaction</a>
-              <a class="dropdown-item" href="./learn-balancing-the-chemical-reaction.html">Balancing the Chemical Reaction</a>
-              <a class="dropdown-item" href="./view-periodic-table.html">View Periodic Table</a>
-              <a class="dropdown-item" href="./tips-to-remember-periodic-table.html">Tips to Remember Periodic Table</a>
+              <a class="dropdown-item" href="./types-of-reactions.html" id = "Types_of_chemical_reactions">Types of Chemical Reaction</a>
+              <a class="dropdown-item" href="./learn-balancing-the-chemical-reaction.html" id = "Balance_the_chemical_reactions">Balancing the Chemical Reaction</a>
+              <a class="dropdown-item" href="./view-periodic-table.html" id = "View_periodic_table">View Periodic Table</a>
+              <a class="dropdown-item" href="./tips-to-remember-periodic-table.html" id = "Tips_to_remember_periodic_table">Tips to Remember Periodic Table</a>
             </div>
           </div>
           <div class="dropdown">
             <button class="btn dropdown-toggle m-2" type="button" id="playDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="./img/nav/play-emoji.png" class="emoji" alt="Play"/>Play
+              <img src="./img/nav/play-emoji.png" class="emoji" alt="Play"/><span id = "Play">Play</span>
               <span class="sr-only">(current)</span></a
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html" id = "molequilizer_chemical_reactions_game">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html" id = "memperiodica_Periodic_table_game">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -151,7 +160,7 @@
       />
     </div>
 
-    <!-- Login Modal Start here -->
+       <!-- Login Modal Start here -->
     <div
       class="modal fade"
       id="exampleModalCenter"
@@ -179,7 +188,7 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -212,14 +221,15 @@
                 >
                   Sign in
                 </button>
-                
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Login modal end here -->
+    <a href="#" onclick="setLanguage('en')">English</a> 
+    <a href="#" onclick="setLanguage('hn')">Hindi</a>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -245,5 +255,24 @@
     <script src="./js/firebase/auth.js"></script>
     <script src="./js/learn/firebase-progress-sync.js"></script>
     <script src="./js/learn/learn-renderer.js"></script>
+
+
+    <!-- language part -->
+    <script type="text/javascript" src="language/hn.json"></script>
+    <script type="text/javascript" src="language/en.json"></script>
+    <script type="text/javascript" src="js/navbarJs/updateNavbarLang.js"></script>
+    <script>
+      function setLanguage(lang) {
+        localStorage.setItem('language', lang);
+        updateNavbarLanguage()
+      }
+      $(document).ready(function(){
+          localStorage.getItem('language') == null ? setLanguage('en') : false;
+          updateNavbarLanguage()
+      });
+
+    </script>
+    <!-- language part -->
+
   </body>
 </html>

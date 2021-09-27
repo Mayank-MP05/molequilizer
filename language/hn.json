@@ -1,0 +1,11 @@
+const hindiData = {
+    "Learn": "सीखना",
+    "Types_of_chemical_reactions": "रासायनिक प्रतिक्रियाओं के प्रकार",
+    "Balance_the_chemical_reactions": "रासायनिक प्रतिक्रियाओं को संतुलित करें",
+    "View_periodic_table": "आवर्त सारणी देखें",
+    "Tips_to_remember_periodic_table": "आवर्त सारणी याद रखने के उपाय",
+    "Play": "खेल",
+    "molequilizer_chemical_reactions_game": "आणविक रासायनिक प्रतिक्रिया खेल",
+    "memperiodica_Periodic_table_game": "मेम्परियोडिका आवर्त सारणी खेल",
+    "Join_in" : "जुडिये",
+}

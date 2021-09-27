@@ -66,3 +66,14 @@
   width: 400px;
   margin: auto;
 }
+
+@media only screen and (max-width: 600px) {
+  /* Mobile CSS*/
+  .customcheck {
+    display: none;
+  }
+
+  #headingOne {
+    padding: 5px;
+  }
+}

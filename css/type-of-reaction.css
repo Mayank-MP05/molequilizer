@@ -12,3 +12,8 @@
 .type-of-reaction-table th {
   border: 2px solid gray;
 }
+
+.table-holder{
+  max-width: 100%;
+  overflow-x: auto;
+}

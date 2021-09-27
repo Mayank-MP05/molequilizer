@@ -1,11 +1,12 @@
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBwmLB1HMfkn5lBePGde6NcllJmD4tDo_Y",
-  authDomain: "team-molequilizer.firebaseapp.com",
-  projectId: "team-molequilizer",
-  storageBucket: "team-molequilizer.appspot.com",
-  messagingSenderId: "1039598541413",
-  appId: "1:1039598541413:web:947f26fdac3e5c3c40448c",
+var firebaseConfig = {
+  apiKey: "AIzaSyDIrny-a431INfeRL9BSDXRKTYZXX7K7Yc",
+  authDomain: "essentials-6bca6.firebaseapp.com",
+  projectId: "essentials-6bca6",
+  storageBucket: "essentials-6bca6.appspot.com",
+  messagingSenderId: "1080942207592",
+  appId: "1:1080942207592:web:db881eeb9c30ea7637d1dd",
+  measurementId: "G-6CQCWE9J58",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

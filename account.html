@@ -24,6 +24,14 @@
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/modal-form.css" />
     <link rel="stylesheet" href="./css/progress-bar.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199287147-2"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-199287147-2');
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light moleq-nav">
@@ -60,8 +68,8 @@
             >
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="playDropdownMenuButton">
-              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Balancing Game</a>
-              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Remembering Game</a>
+              <a class="dropdown-item" href="./play-chem-reactions.html">Molequilizer - Chemical Reaction Game</a>
+              <a class="dropdown-item" href="./play-periodic-table.html">MemPerodica - Periodic Table Game</a>
               
             </div>
           </div>
@@ -214,7 +222,8 @@
               <div class="alert alert-success" role="alert" id="LoginAlert">
                 Logging you in...
               </div>
-              <h5 class="card-title text-center">Join In</h5>
+              
+              <h5 class="card-title text-center"  id="auth-toggler-title">Join In</h5>
 
               <div class="form-signin">
                 <div class="form-label-group">
@@ -247,7 +256,7 @@
                 >
                   Sign in
                 </button>
-                
+                <button class="btn btn-sm auth-toggler-btn" id="auth-toggler-btn">Create a account</button>
               </div>
             </div>
           </div>
@@ -255,7 +264,7 @@
       </div>
     </div>
     <!-- Login modal end here -->
-    <script
+       <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"

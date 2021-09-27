@@ -132,3 +132,8 @@ body {
     color: #777;
   }
 }
+
+.auth-toggler-btn {
+  margin: 5px;
+  float: right;
+}

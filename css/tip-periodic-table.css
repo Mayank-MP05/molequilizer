@@ -9,3 +9,7 @@ tbody > tr:first-child > th {
   background-color: #63d2972c;
   border: 2px solid#63d297;
 }
+
+.overflox-x-auto{
+  overflow-x: auto;
+}
